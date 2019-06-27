@@ -1,0 +1,13 @@
+# DESCRIPTION: Verilator output: Timestamp data for --skip-identical.  Delete at will.
+C "--cc --exe -Mdir /home/samsow/chisel-crash-course/adder/sim/vout --top-module Test /home/samsow/chisel-crash-course/adder/sim/vout/Test.v /home/samsow/chisel-crash-course/adder/src/test/resources/csrc/main.cc -Wno-STMTDLY -Wno-WIDTH -Wno-CASEINCOMPLETE --output-split 20000 --output-split-cfuncs 20000 --x-assign unique +define+RANDOMIZE_GARBAGE_ASSIGN +define+RANDOMIZE_REG_INIT +define+RANDOMIZE_MEM_INIT -CFLAGS -I/home/samsow/chisel-crash-course/adder/src/test/resources/csrc -include VTest.h -DVNAME=VTest -o /home/samsow/chisel-crash-course/adder/sim/vout/Test"
+S      3260 42074707  1561415718   847158824  1561415718   847158824 "/home/samsow/chisel-crash-course/adder/sim/vout/Test.v"
+T      4384 42074717  1561415719   339168463  1561415719   339168463 "/home/samsow/chisel-crash-course/adder/sim/vout/VTest.cpp"
+T      2776 42074716  1561415719   339168463  1561415719   339168463 "/home/samsow/chisel-crash-course/adder/sim/vout/VTest.h"
+T      2063 42074720  1561415719   339168463  1561415719   339168463 "/home/samsow/chisel-crash-course/adder/sim/vout/VTest.mk"
+T      2580 42074718  1561415719   339168463  1561415719   339168463 "/home/samsow/chisel-crash-course/adder/sim/vout/VTest__Slow.cpp"
+T       520 42074715  1561415719   339168463  1561415719   339168463 "/home/samsow/chisel-crash-course/adder/sim/vout/VTest__Syms.cpp"
+T       703 42074714  1561415719   339168463  1561415719   339168463 "/home/samsow/chisel-crash-course/adder/sim/vout/VTest__Syms.h"
+T       606 42074721  1561415719   339168463  1561415719   339168463 "/home/samsow/chisel-crash-course/adder/sim/vout/VTest__ver.d"
+T         0        0  1561415719   343168541  1561415719   343168541 "/home/samsow/chisel-crash-course/adder/sim/vout/VTest__verFiles.dat"
+T      1168 42074719  1561415719   339168463  1561415719   339168463 "/home/samsow/chisel-crash-course/adder/sim/vout/VTest_classes.mk"
+S   6619528 15730091  1556424481   372840019  1556424481   372840019 "/usr/local/bin/verilator_bin"
