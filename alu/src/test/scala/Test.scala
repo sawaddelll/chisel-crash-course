@@ -14,15 +14,66 @@ class DataGen(dataBits: Int = 8) extends Module {
     val ovfl = Input(Bool())
     val zero = Input(Bool())
     val neg = Input(Bool())
+    val ctrl = Input(UInt(3.W))
   })
-
-  val (cnt, _) = Counter(true.B, 256)
-
+  val (cntcnt, _) = Counter(true.B, 4)
+  val slowclk = Wire(Bool())
+  when(cntcnt%2.U === 0.U) {
+    slowclk := true.B 
+  } .otherwise {
+    slowclk := false.B
+  }
+  val (cnt, _) = Counter(slowclk, 256)
+  val countOn = Wire(Bool())
+  val (cnt2, _) = Counter(countOn, 256)
+  when(cnt > 8.U) {
+    countOn := true.B
+    io.b := cnt2
+  } .otherwise {
+    countOn := false.B
+    io.b := 1.U
+  }
+  
   io.a := cnt
-  io.b := cnt % 2.U
-
+ 
+  val aIn = RegNext(io.a, 0.U)
+  val bIn = RegNext(io.b, 0.U)
+  val prodIn = RegNext(io.prod, false.B)
+  val ovflIn = RegNext(io.ovfl, false.B)
+  val zeroIn = Wire(Bool()) // RegNext(io.zero, false.B)
+  zeroIn := io.zero
+  val negIn = Wire(Bool()) // RegNext(io.neg, false.B)
+  negIn := io.neg
+  val ctrlIn = RegNext(io.ctrl, 0.U)
+  val passThrough::add::subtract::multiply::divide::and::or::xor::Nil = Enum(8)
+ 
   when(true.B) {
-    printf("a:%x b:%x result:%x prod:%x ovfl:%x zero:%x neg:%x \n", io.a, io.b, io.y, io.prod, io.ovfl, io.zero, io.neg ) 
+     
+     when(ctrlIn === passThrough) {
+        printf("passThrough \n")
+     } .elsewhen(ctrlIn === add) {
+        printf("add \n")
+     } .elsewhen(ctrlIn === subtract) {
+        printf("subtract \n")
+     } .elsewhen(ctrlIn === multiply) {
+        printf("multiply \n")
+     } .elsewhen(ctrlIn === divide) {
+        printf("divide \n")
+     } .elsewhen(ctrlIn === and) {
+        printf("and \n")
+        printf("%b &\n%b = \n%b \n", aIn, bIn, io.y)
+     } .elsewhen(ctrlIn === or) {
+        printf("or \n")
+        printf("%b |\n%b = \n%b \n", aIn, bIn, io.y)
+     } .elsewhen(ctrlIn === xor) {
+        printf("xor \n")
+        printf("%b ^\n%b = \n%b \n", aIn, bIn, io.y)
+     } .otherwise {
+        printf(" \n")
+     }
+
+    
+    printf("a:%d b:%d result:%d prod:%d \novfl:%d zero:%d neg:%d \n \n", aIn, bIn, io.y, prodIn, ovflIn, zeroIn, negIn ) 
   }
 }
 
@@ -37,7 +88,9 @@ class Test extends Module {
   gen.io.ovfl := alu.io.overflow
   gen.io.zero := alu.io.zero
   gen.io.neg := alu.io.negative
-  alu.io.ctrl := gen.io.a % 8.U
+  val (ctrlCount,_) = Counter(true.B, 8)
+  alu.io.ctrl := ctrlCount
+  gen.io.ctrl := ctrlCount
   
 }
 

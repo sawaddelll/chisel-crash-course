@@ -15,12 +15,10 @@ class ALU(dataBits: Int = 8) extends Module {
     val overflow = Output(Bool())
     val product = Output(UInt((dataBits*2).W))
   })
-
+  val out = Wire(UInt(dataBits.W))
   io.negative := io.result(dataBits-1)
-  io.overflow := (io.a(dataBits-1) === io.b(dataBits-1)) && (io.result(dataBits-1) =/= io.a(dataBits-1))
   io.zero     := ~(io.result.orR)
   val addition = io.a + io.b
-  val out = Wire(UInt(dataBits.W))
   val storedValue  = RegNext(out, 0.U)
   storedValue := out
   val passThrough::add::subtract::multiply::divide::and::or::xor::Nil = Enum(8)
@@ -47,6 +45,7 @@ class ALU(dataBits: Int = 8) extends Module {
   }
 
   io.result := storedValue
+  io.overflow := (io.a(dataBits-1) === io.b(dataBits-1)) && (out(dataBits-1) =/= io.a(dataBits-1))
 }
 
 object Elaborate extends App {

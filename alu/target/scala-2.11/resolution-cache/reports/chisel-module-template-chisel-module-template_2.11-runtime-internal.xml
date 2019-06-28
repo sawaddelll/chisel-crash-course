@@ -7,64 +7,64 @@
 		revision="3.1.1"
 		conf="runtime-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
-		date="20190624223510"/>
+		date="20190628001814"/>
 	<dependencies>
 		<module organisation="edu.berkeley.cs" name="chisel-iotesters_2.11">
-			<revision name="1.2.9" status="release" pubdate="20190320222342" resolver="public" artresolver="public" homepage="http://chisel.eecs.berkeley.edu/" downloaded="true" searched="true" default="false" conf="default, compile, runtime, default(compile), master" position="27">
+			<revision name="1.2.9" status="release" pubdate="20190320222342" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://chisel.eecs.berkeley.edu/" downloaded="false" searched="true" default="false" conf="default, compile, runtime, default(compile), master" position="27">
 				<license name="BSD-style" url="http://www.opensource.org/licenses/bsd-license.php"/>
-				<metadata-artifact status="successful" details="" size="2849" time="18" location="/home/samsow/.ivy2/cache/edu.berkeley.cs/chisel-iotesters_2.11/ivy-1.2.9.xml" searched="true" original-local-location="/home/samsow/.ivy2/cache/edu.berkeley.cs/chisel-iotesters_2.11/ivy-1.2.9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/edu/berkeley/cs/chisel-iotesters_2.11/1.2.9/chisel-iotesters_2.11-1.2.9.pom"/>
+				<metadata-artifact status="no" details="" size="3713" time="0" location="/home/samsow/.ivy2/cache/edu.berkeley.cs/chisel-iotesters_2.11/ivy-1.2.9.xml" searched="true" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/edu/berkeley/cs/chisel-iotesters_2.11/1.2.9/chisel-iotesters_2.11-1.2.9.pom"/>
 				<caller organisation="chisel-module-template" name="chisel-module-template_2.11" conf="compile, runtime-internal, runtime, optional" rev="[1.2.5,1.3-SNAPSHOT[" rev-constraint-default="[1.2.5,1.3-SNAPSHOT[" rev-constraint-dynamic="[1.2.5,1.3-SNAPSHOT[" callerrev="3.1.1"/>
 				<artifacts>
-					<artifact name="chisel-iotesters_2.11" type="jar" ext="jar" status="successful" details="" size="687546" time="168" location="/home/samsow/.ivy2/cache/edu.berkeley.cs/chisel-iotesters_2.11/jars/chisel-iotesters_2.11-1.2.9.jar">
+					<artifact name="chisel-iotesters_2.11" type="jar" ext="jar" status="no" details="" size="687546" time="0" location="/home/samsow/.ivy2/cache/edu.berkeley.cs/chisel-iotesters_2.11/jars/chisel-iotesters_2.11-1.2.9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/edu/berkeley/cs/chisel-iotesters_2.11/1.2.9/chisel-iotesters_2.11-1.2.9.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="edu.berkeley.cs" name="treadle_2.11">
-			<revision name="1.0.5" status="release" pubdate="20190320221014" resolver="public" artresolver="public" homepage="http://chisel.eecs.berkeley.edu/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="36">
+			<revision name="1.0.5" status="release" pubdate="20190320221014" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://chisel.eecs.berkeley.edu/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="36">
 				<license name="BSD-style" url="http://www.opensource.org/licenses/bsd-license.php"/>
-				<metadata-artifact status="successful" details="" size="2341" time="12" location="/home/samsow/.ivy2/cache/edu.berkeley.cs/treadle_2.11/ivy-1.0.5.xml" searched="true" original-local-location="/home/samsow/.ivy2/cache/edu.berkeley.cs/treadle_2.11/ivy-1.0.5.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/edu/berkeley/cs/treadle_2.11/1.0.5/treadle_2.11-1.0.5.pom"/>
+				<metadata-artifact status="no" details="" size="3392" time="0" location="/home/samsow/.ivy2/cache/edu.berkeley.cs/treadle_2.11/ivy-1.0.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/edu/berkeley/cs/treadle_2.11/1.0.5/treadle_2.11-1.0.5.pom"/>
 				<caller organisation="edu.berkeley.cs" name="chisel-iotesters_2.11" conf="default, compile, runtime, master" rev="1.0.5" rev-constraint-default="1.0.5" rev-constraint-dynamic="1.0.5" callerrev="1.2.9"/>
 				<artifacts>
-					<artifact name="treadle_2.11" type="jar" ext="jar" status="successful" details="" size="1698666" time="223" location="/home/samsow/.ivy2/cache/edu.berkeley.cs/treadle_2.11/jars/treadle_2.11-1.0.5.jar">
+					<artifact name="treadle_2.11" type="jar" ext="jar" status="no" details="" size="1698666" time="0" location="/home/samsow/.ivy2/cache/edu.berkeley.cs/treadle_2.11/jars/treadle_2.11-1.0.5.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/edu/berkeley/cs/treadle_2.11/1.0.5/treadle_2.11-1.0.5.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="edu.berkeley.cs" name="firrtl-interpreter_2.11">
-			<revision name="1.1.7" status="release" pubdate="20190320220802" resolver="public" artresolver="public" homepage="http://chisel.eecs.berkeley.edu/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="28">
+			<revision name="1.1.7" status="release" pubdate="20190320220802" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://chisel.eecs.berkeley.edu/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="28">
 				<license name="BSD-style" url="http://www.opensource.org/licenses/bsd-license.php"/>
-				<metadata-artifact status="successful" details="" size="2336" time="17" location="/home/samsow/.ivy2/cache/edu.berkeley.cs/firrtl-interpreter_2.11/ivy-1.1.7.xml" searched="true" original-local-location="/home/samsow/.ivy2/cache/edu.berkeley.cs/firrtl-interpreter_2.11/ivy-1.1.7.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/edu/berkeley/cs/firrtl-interpreter_2.11/1.1.7/firrtl-interpreter_2.11-1.1.7.pom"/>
+				<metadata-artifact status="no" details="" size="3278" time="0" location="/home/samsow/.ivy2/cache/edu.berkeley.cs/firrtl-interpreter_2.11/ivy-1.1.7.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/edu/berkeley/cs/firrtl-interpreter_2.11/1.1.7/firrtl-interpreter_2.11-1.1.7.pom"/>
 				<caller organisation="edu.berkeley.cs" name="chisel-iotesters_2.11" conf="default, compile, runtime, master" rev="1.1.7" rev-constraint-default="1.1.7" rev-constraint-dynamic="1.1.7" callerrev="1.2.9"/>
 				<artifacts>
-					<artifact name="firrtl-interpreter_2.11" type="jar" ext="jar" status="successful" details="" size="706060" time="167" location="/home/samsow/.ivy2/cache/edu.berkeley.cs/firrtl-interpreter_2.11/jars/firrtl-interpreter_2.11-1.1.7.jar">
+					<artifact name="firrtl-interpreter_2.11" type="jar" ext="jar" status="no" details="" size="706060" time="0" location="/home/samsow/.ivy2/cache/edu.berkeley.cs/firrtl-interpreter_2.11/jars/firrtl-interpreter_2.11-1.1.7.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/edu/berkeley/cs/firrtl-interpreter_2.11/1.1.7/firrtl-interpreter_2.11-1.1.7.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.scala-lang.modules" name="scala-jline">
-			<revision name="2.12.1" status="release" pubdate="20150609152142" resolver="public" artresolver="public" homepage="http://www.scala-lang.org/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="34">
+			<revision name="2.12.1" status="release" pubdate="20150609152142" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="34">
 				<license name="BSD 3-clause" url="http://opensource.org/licenses/BSD-3-Clause"/>
-				<metadata-artifact status="successful" details="" size="2083" time="13" location="/home/samsow/.ivy2/cache/org.scala-lang.modules/scala-jline/ivy-2.12.1.xml" searched="true" original-local-location="/home/samsow/.ivy2/cache/org.scala-lang.modules/scala-jline/ivy-2.12.1.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/modules/scala-jline/2.12.1/scala-jline-2.12.1.pom"/>
+				<metadata-artifact status="no" details="" size="2877" time="0" location="/home/samsow/.ivy2/cache/org.scala-lang.modules/scala-jline/ivy-2.12.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/modules/scala-jline/2.12.1/scala-jline-2.12.1.pom"/>
 				<caller organisation="edu.berkeley.cs" name="treadle_2.11" conf="compile, runtime" rev="2.12.1" rev-constraint-default="2.12.1" rev-constraint-dynamic="2.12.1" callerrev="1.0.5"/>
 				<caller organisation="edu.berkeley.cs" name="firrtl-interpreter_2.11" conf="compile, runtime" rev="2.12.1" rev-constraint-default="2.12.1" rev-constraint-dynamic="2.12.1" callerrev="1.1.7"/>
 				<artifacts>
-					<artifact name="scala-jline" type="bundle" ext="jar" status="successful" details="" size="121065" time="97" location="/home/samsow/.ivy2/cache/org.scala-lang.modules/scala-jline/bundles/scala-jline-2.12.1.jar">
+					<artifact name="scala-jline" type="bundle" ext="jar" status="no" details="" size="121065" time="0" location="/home/samsow/.ivy2/cache/org.scala-lang.modules/scala-jline/bundles/scala-jline-2.12.1.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/modules/scala-jline/2.12.1/scala-jline-2.12.1.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.fusesource.jansi" name="jansi">
-			<revision name="1.11" status="release" pubdate="20130513132123" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="35">
+			<revision name="1.11" status="release" pubdate="20130513132123" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="35">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="3601" time="10" location="/home/samsow/.ivy2/cache/org.fusesource.jansi/jansi/ivy-1.11.xml" searched="true" original-local-location="/home/samsow/.ivy2/cache/org.fusesource.jansi/jansi/ivy-1.11.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/fusesource/jansi/jansi/1.11/jansi-1.11.pom"/>
+				<metadata-artifact status="no" details="" size="4058" time="0" location="/home/samsow/.ivy2/cache/org.fusesource.jansi/jansi/ivy-1.11.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/fusesource/jansi/jansi/1.11/jansi-1.11.pom"/>
 				<caller organisation="org.scala-lang.modules" name="scala-jline" conf="compile, runtime" rev="1.11" rev-constraint-default="1.11" rev-constraint-dynamic="1.11" callerrev="2.12.1"/>
 				<artifacts>
-					<artifact name="jansi" type="jar" ext="jar" status="successful" details="" size="114415" time="92" location="/home/samsow/.ivy2/cache/org.fusesource.jansi/jansi/jars/jansi-1.11.jar">
+					<artifact name="jansi" type="jar" ext="jar" status="no" details="" size="114415" time="0" location="/home/samsow/.ivy2/cache/org.fusesource.jansi/jansi/jars/jansi-1.11.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/fusesource/jansi/jansi/1.11/jansi-1.11.jar"/>
 					</artifact>
 				</artifacts>
@@ -392,28 +392,28 @@
 			</revision>
 		</module>
 		<module organisation="org.scalatest" name="scalatest_2.11">
-			<revision name="3.0.1" status="release" pubdate="20161110035601" resolver="public" artresolver="public" homepage="http://www.scalatest.org" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="29">
+			<revision name="3.0.1" status="release" pubdate="20161110035601" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scalatest.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="29">
 				<license name="the Apache License, ASL Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
-				<metadata-artifact status="successful" details="" size="5963" time="11" location="/home/samsow/.ivy2/cache/org.scalatest/scalatest_2.11/ivy-3.0.1.xml" searched="true" original-local-location="/home/samsow/.ivy2/cache/org.scalatest/scalatest_2.11/ivy-3.0.1.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scalatest/scalatest_2.11/3.0.1/scalatest_2.11-3.0.1.pom"/>
+				<metadata-artifact status="no" details="" size="5287" time="0" location="/home/samsow/.ivy2/cache/org.scalatest/scalatest_2.11/ivy-3.0.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scalatest/scalatest_2.11/3.0.1/scalatest_2.11-3.0.1.pom"/>
 				<caller organisation="edu.berkeley.cs" name="treadle_2.11" conf="compile, runtime" rev="3.0.1" rev-constraint-default="3.0.1" rev-constraint-dynamic="3.0.1" callerrev="1.0.5"/>
 				<caller organisation="edu.berkeley.cs" name="chisel-iotesters_2.11" conf="default, compile, runtime, master" rev="3.0.1" rev-constraint-default="3.0.1" rev-constraint-dynamic="3.0.1" callerrev="1.2.9"/>
 				<caller organisation="edu.berkeley.cs" name="firrtl-interpreter_2.11" conf="compile, runtime" rev="3.0.1" rev-constraint-default="3.0.1" rev-constraint-dynamic="3.0.1" callerrev="1.1.7"/>
 				<artifacts>
-					<artifact name="scalatest_2.11" type="bundle" ext="jar" status="successful" details="" size="10423607" time="367" location="/home/samsow/.ivy2/cache/org.scalatest/scalatest_2.11/bundles/scalatest_2.11-3.0.1.jar">
+					<artifact name="scalatest_2.11" type="bundle" ext="jar" status="no" details="" size="10423607" time="0" location="/home/samsow/.ivy2/cache/org.scalatest/scalatest_2.11/bundles/scalatest_2.11-3.0.1.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scalatest/scalatest_2.11/3.0.1/scalatest_2.11-3.0.1.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.scalacheck" name="scalacheck_2.11">
-			<revision name="1.13.4" status="release" pubdate="20161101141546" resolver="public" artresolver="public" homepage="http://www.scalacheck.org" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="32">
+			<revision name="1.13.4" status="release" pubdate="20161101141546" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scalacheck.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="32">
 				<license name="BSD-style" url="http://www.opensource.org/licenses/bsd-license.php"/>
-				<metadata-artifact status="successful" details="" size="1592" time="17" location="/home/samsow/.ivy2/cache/org.scalacheck/scalacheck_2.11/ivy-1.13.4.xml" searched="true" original-local-location="/home/samsow/.ivy2/cache/org.scalacheck/scalacheck_2.11/ivy-1.13.4.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scalacheck/scalacheck_2.11/1.13.4/scalacheck_2.11-1.13.4.pom"/>
+				<metadata-artifact status="no" details="" size="2797" time="0" location="/home/samsow/.ivy2/cache/org.scalacheck/scalacheck_2.11/ivy-1.13.4.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scalacheck/scalacheck_2.11/1.13.4/scalacheck_2.11-1.13.4.pom"/>
 				<caller organisation="edu.berkeley.cs" name="treadle_2.11" conf="compile, runtime" rev="1.13.4" rev-constraint-default="1.13.4" rev-constraint-dynamic="1.13.4" callerrev="1.0.5"/>
 				<caller organisation="edu.berkeley.cs" name="chisel-iotesters_2.11" conf="default, compile, runtime, master" rev="1.13.4" rev-constraint-default="1.13.4" rev-constraint-dynamic="1.13.4" callerrev="1.2.9"/>
 				<caller organisation="edu.berkeley.cs" name="firrtl-interpreter_2.11" conf="compile, runtime" rev="1.13.4" rev-constraint-default="1.13.4" rev-constraint-dynamic="1.13.4" callerrev="1.1.7"/>
 				<artifacts>
-					<artifact name="scalacheck_2.11" type="jar" ext="jar" status="successful" details="" size="3093888" time="272" location="/home/samsow/.ivy2/cache/org.scalacheck/scalacheck_2.11/jars/scalacheck_2.11-1.13.4.jar">
+					<artifact name="scalacheck_2.11" type="jar" ext="jar" status="no" details="" size="3093888" time="0" location="/home/samsow/.ivy2/cache/org.scalacheck/scalacheck_2.11/jars/scalacheck_2.11-1.13.4.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scalacheck/scalacheck_2.11/1.13.4/scalacheck_2.11-1.13.4.jar"/>
 					</artifact>
 				</artifacts>
@@ -444,12 +444,12 @@
 			</revision>
 		</module>
 		<module organisation="org.scalactic" name="scalactic_2.11">
-			<revision name="3.0.1" status="release" pubdate="20161110035324" resolver="public" artresolver="public" homepage="http://www.scalatest.org" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="30">
+			<revision name="3.0.1" status="release" pubdate="20161110035324" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scalatest.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="30">
 				<license name="the Apache License, ASL Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
-				<metadata-artifact status="successful" details="" size="2236" time="10" location="/home/samsow/.ivy2/cache/org.scalactic/scalactic_2.11/ivy-3.0.1.xml" searched="true" original-local-location="/home/samsow/.ivy2/cache/org.scalactic/scalactic_2.11/ivy-3.0.1.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scalactic/scalactic_2.11/3.0.1/scalactic_2.11-3.0.1.pom"/>
+				<metadata-artifact status="no" details="" size="2967" time="0" location="/home/samsow/.ivy2/cache/org.scalactic/scalactic_2.11/ivy-3.0.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scalactic/scalactic_2.11/3.0.1/scalactic_2.11-3.0.1.pom"/>
 				<caller organisation="org.scalatest" name="scalatest_2.11" conf="compile, runtime" rev="3.0.1" rev-constraint-default="3.0.1" rev-constraint-dynamic="3.0.1" callerrev="3.0.1"/>
 				<artifacts>
-					<artifact name="scalactic_2.11" type="bundle" ext="jar" status="successful" details="" size="740209" time="164" location="/home/samsow/.ivy2/cache/org.scalactic/scalactic_2.11/bundles/scalactic_2.11-3.0.1.jar">
+					<artifact name="scalactic_2.11" type="bundle" ext="jar" status="no" details="" size="740209" time="0" location="/home/samsow/.ivy2/cache/org.scalactic/scalactic_2.11/bundles/scalactic_2.11-3.0.1.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scalactic/scalactic_2.11/3.0.1/scalactic_2.11-3.0.1.jar"/>
 					</artifact>
 				</artifacts>

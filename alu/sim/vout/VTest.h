@@ -27,9 +27,39 @@ VL_MODULE(VTest) {
     // LOCAL SIGNALS
     // Internals; generally not touched by application code
     // Begin mtask footprint  all: 
-    VL_SIG8(Test__DOT__gen__DOT__value,7,0);
-    VL_SIG8(Test__DOT__gen__DOT___T_18,7,0);
+    VL_SIG8(Test__DOT__gen_io_b,7,0);
+    VL_SIG8(Test__DOT__value,2,0);
+    VL_SIG8(Test__DOT___T_12,2,0);
+    VL_SIG8(Test__DOT__gen__DOT__value,1,0);
+    VL_SIG8(Test__DOT__gen__DOT___T_28,1,0);
+    VL_SIG8(Test__DOT__gen__DOT__value_1,7,0);
+    VL_SIG8(Test__DOT__gen__DOT___T_43,7,0);
+    VL_SIG8(Test__DOT__gen__DOT__value_2,7,0);
+    VL_SIG8(Test__DOT__gen__DOT___T_52,7,0);
+    VL_SIG8(Test__DOT__gen__DOT__aIn,7,0);
+    VL_SIG8(Test__DOT__gen__DOT__bIn,7,0);
+    VL_SIG8(Test__DOT__gen__DOT__ovflIn,0,0);
+    VL_SIG8(Test__DOT__gen__DOT__ctrlIn,2,0);
+    VL_SIG8(Test__DOT__gen__DOT___GEN_10,0,0);
+    VL_SIG8(Test__DOT__gen__DOT___GEN_16,0,0);
+    VL_SIG8(Test__DOT__gen__DOT___GEN_24,0,0);
+    VL_SIG8(Test__DOT__gen__DOT___GEN_34,0,0);
+    VL_SIG8(Test__DOT__gen__DOT___GEN_56,0,0);
+    VL_SIG8(Test__DOT__gen__DOT___GEN_82,0,0);
+    VL_SIG8(Test__DOT__alu__DOT__storedValue,7,0);
+    VL_SIG16(Test__DOT__alu_io_product,15,0);
+    VL_SIG16(Test__DOT__gen__DOT__prodIn,15,0);
+    VL_SIG16(Test__DOT__alu__DOT___GEN_10,15,0);
+    VL_SIG(Test__DOT___RAND_0,31,0);
     VL_SIG(Test__DOT__gen__DOT___RAND_0,31,0);
+    VL_SIG(Test__DOT__gen__DOT___RAND_1,31,0);
+    VL_SIG(Test__DOT__gen__DOT___RAND_2,31,0);
+    VL_SIG(Test__DOT__gen__DOT___RAND_3,31,0);
+    VL_SIG(Test__DOT__gen__DOT___RAND_4,31,0);
+    VL_SIG(Test__DOT__gen__DOT___RAND_5,31,0);
+    VL_SIG(Test__DOT__gen__DOT___RAND_6,31,0);
+    VL_SIG(Test__DOT__gen__DOT___RAND_7,31,0);
+    VL_SIG(Test__DOT__alu__DOT___RAND_0,31,0);
     
     // LOCAL VARIABLES
     // Internals; generally not touched by application code
