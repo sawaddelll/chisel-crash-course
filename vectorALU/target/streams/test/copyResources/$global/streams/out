@@ -1,0 +1,4 @@
+[0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/home/samsow/chisel-crash-course/alu/src/test/resources/csrc,/home/samsow/chisel-crash-course/alu/target/scala-2.11/test-classes/csrc)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/home/samsow/chisel-crash-course/alu/src/test/resources/csrc/main.cc,/home/samsow/chisel-crash-course/alu/target/scala-2.11/test-classes/csrc/main.cc)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/home/samsow/chisel-crash-course/alu/src/test/resources/csrc/verilator.h,/home/samsow/chisel-crash-course/alu/target/scala-2.11/test-classes/csrc/verilator.h)[0m

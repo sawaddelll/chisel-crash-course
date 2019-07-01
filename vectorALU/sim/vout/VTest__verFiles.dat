@@ -1,0 +1,13 @@
+# DESCRIPTION: Verilator output: Timestamp data for --skip-identical.  Delete at will.
+C "--cc --exe -Mdir /home/samsow/chisel-crash-course/alu/sim/vout --top-module Test /home/samsow/chisel-crash-course/alu/sim/vout/Test.v /home/samsow/chisel-crash-course/alu/src/test/resources/csrc/main.cc -Wno-STMTDLY -Wno-WIDTH -Wno-CASEINCOMPLETE --output-split 20000 --output-split-cfuncs 20000 --x-assign unique +define+RANDOMIZE_GARBAGE_ASSIGN +define+RANDOMIZE_REG_INIT +define+RANDOMIZE_MEM_INIT -CFLAGS -I/home/samsow/chisel-crash-course/alu/src/test/resources/csrc -include VTest.h -DVNAME=VTest -o /home/samsow/chisel-crash-course/alu/sim/vout/Test"
+S     24006 42338650  1562024864   759243372  1562024864   759243372 "/home/samsow/chisel-crash-course/alu/sim/vout/Test.v"
+T     14674 42338657  1562024864   975247559  1562024864   975247559 "/home/samsow/chisel-crash-course/alu/sim/vout/VTest.cpp"
+T      4408 42338653  1562024864   975247559  1562024864   975247559 "/home/samsow/chisel-crash-course/alu/sim/vout/VTest.h"
+T      2053 42338660  1562024864   979247636  1562024864   979247636 "/home/samsow/chisel-crash-course/alu/sim/vout/VTest.mk"
+T      8246 42338658  1562024864   979247636  1562024864   979247636 "/home/samsow/chisel-crash-course/alu/sim/vout/VTest__Slow.cpp"
+T       520 42338652  1562024864   975247559  1562024864   975247559 "/home/samsow/chisel-crash-course/alu/sim/vout/VTest__Syms.cpp"
+T       703 42338651  1562024864   975247559  1562024864   975247559 "/home/samsow/chisel-crash-course/alu/sim/vout/VTest__Syms.h"
+T       588 42338661  1562024864   979247636  1562024864   979247636 "/home/samsow/chisel-crash-course/alu/sim/vout/VTest__ver.d"
+T         0        0  1562024864   979247636  1562024864   979247636 "/home/samsow/chisel-crash-course/alu/sim/vout/VTest__verFiles.dat"
+T      1168 42338659  1562024864   979247636  1562024864   979247636 "/home/samsow/chisel-crash-course/alu/sim/vout/VTest_classes.mk"
+S   6619528 15730091  1556424481   372840019  1556424481   372840019 "/usr/local/bin/verilator_bin"
