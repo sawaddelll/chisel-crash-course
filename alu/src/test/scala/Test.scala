@@ -46,7 +46,7 @@ class DataGen(dataBits: Int = 8) extends Module {
   negIn := io.neg
   val ctrlIn = RegNext(io.ctrl, 0.U)
   val passThrough::add::subtract::multiply::divide::and::or::xor::Nil = Enum(8)
- 
+  printf("negative and overflow flags are based on 2's comp numbers, although ALU is currently definied with UInt") 
   when(true.B) {
      
      when(ctrlIn === passThrough) {
@@ -72,9 +72,13 @@ class DataGen(dataBits: Int = 8) extends Module {
         printf(" \n")
      }
 
-    
-    printf("a:%d b:%d result:%d prod:%d \novfl:%d zero:%d neg:%d \n \n", aIn, bIn, io.y, prodIn, ovflIn, zeroIn, negIn ) 
-  }
+    when((ctrlIn =/= or) && (ctrlIn =/= and) && (ctrlIn =/= xor)) {    
+        printf("a:%d b:%d result:%d prod:%d \novfl:%d zero:%d neg:%d \n \n", aIn, bIn, io.y, prodIn, ovflIn, zeroIn, negIn ) 
+    } .otherwise {
+      printf("\n")
+    }
+  } 
+  
 }
 
 class Test extends Module {
