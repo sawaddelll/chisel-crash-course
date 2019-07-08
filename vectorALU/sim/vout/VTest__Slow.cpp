@@ -37,17 +37,17 @@ void VTest::_initial__TOP__2(VTest__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    VTest::_initial__TOP__2\n"); );
     VTest* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
-    // INITIAL at /home/samsow/chisel-crash-course/alu/sim/vout/Test.v:503
+    // INITIAL at /home/samsow/myChisel/chisel-crash-course/vectorALU/sim/vout/Test.v:503
     vlTOPp->Test__DOT__alu__DOT___RAND_0 = VL_RANDOM_I(32);
     vlTOPp->Test__DOT__alu__DOT__storedValue_0 = (0xffU 
 						  & vlTOPp->Test__DOT__alu__DOT___RAND_0);
     vlTOPp->Test__DOT__alu__DOT___RAND_1 = VL_RANDOM_I(32);
     vlTOPp->Test__DOT__alu__DOT__storedValue_1 = (0xffU 
 						  & vlTOPp->Test__DOT__alu__DOT___RAND_1);
-    // INITIAL at /home/samsow/chisel-crash-course/alu/sim/vout/Test.v:650
+    // INITIAL at /home/samsow/myChisel/chisel-crash-course/vectorALU/sim/vout/Test.v:650
     vlTOPp->Test__DOT___RAND_0 = VL_RANDOM_I(32);
     vlTOPp->Test__DOT__value = (7U & vlTOPp->Test__DOT___RAND_0);
-    // INITIAL at /home/samsow/chisel-crash-course/alu/sim/vout/Test.v:136
+    // INITIAL at /home/samsow/myChisel/chisel-crash-course/vectorALU/sim/vout/Test.v:136
     vlTOPp->Test__DOT__gen__DOT___RAND_0 = VL_RANDOM_I(32);
     vlTOPp->Test__DOT__gen__DOT__value = (3U & vlTOPp->Test__DOT__gen__DOT___RAND_0);
     vlTOPp->Test__DOT__gen__DOT___RAND_1 = VL_RANDOM_I(32);

@@ -69,7 +69,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__1(VTest__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    VTest::_sequent__TOP__1\n"); );
     VTest* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
-    // ALWAYS at /home/samsow/chisel-crash-course/alu/sim/vout/Test.v:181
+    // ALWAYS at /home/samsow/myChisel/chisel-crash-course/vectorALU/sim/vout/Test.v:181
     if (VL_UNLIKELY(((0U == (IData)(vlTOPp->Test__DOT__gen__DOT__ctrlIn)) 
 		     & (~ (IData)(vlTOPp->reset))))) {
 	VL_FWRITEF(0x80000002U,"passThrough \n");
@@ -170,7 +170,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__1(VTest__Syms* __restrict vlSymsp) {
 			   & (~ (IData)(vlTOPp->reset)))))) {
 	VL_FWRITEF(0x80000002U,"\n");
     }
-    // ALWAYS at /home/samsow/chisel-crash-course/alu/sim/vout/Test.v:181
+    // ALWAYS at /home/samsow/myChisel/chisel-crash-course/vectorALU/sim/vout/Test.v:181
     if (vlTOPp->reset) {
 	vlTOPp->Test__DOT__gen__DOT__value_2 = 0U;
     } else {
@@ -178,20 +178,20 @@ VL_INLINE_OPT void VTest::_sequent__TOP__1(VTest__Syms* __restrict vlSymsp) {
 	    vlTOPp->Test__DOT__gen__DOT__value_2 = vlTOPp->Test__DOT__gen__DOT___T_90;
 	}
     }
-    // ALWAYS at /home/samsow/chisel-crash-course/alu/sim/vout/Test.v:181
+    // ALWAYS at /home/samsow/myChisel/chisel-crash-course/vectorALU/sim/vout/Test.v:181
     vlTOPp->Test__DOT__gen__DOT__aIn_1 = 0U;
-    // ALWAYS at /home/samsow/chisel-crash-course/alu/sim/vout/Test.v:181
+    // ALWAYS at /home/samsow/myChisel/chisel-crash-course/vectorALU/sim/vout/Test.v:181
     vlTOPp->Test__DOT__gen__DOT__bIn_1 = 0U;
-    // ALWAYS at /home/samsow/chisel-crash-course/alu/sim/vout/Test.v:520
+    // ALWAYS at /home/samsow/myChisel/chisel-crash-course/vectorALU/sim/vout/Test.v:520
     vlTOPp->Test__DOT__alu__DOT__storedValue_1 = 0U;
-    // ALWAYS at /home/samsow/chisel-crash-course/alu/sim/vout/Test.v:181
+    // ALWAYS at /home/samsow/myChisel/chisel-crash-course/vectorALU/sim/vout/Test.v:181
     vlTOPp->Test__DOT__gen__DOT__bIn_0 = vlTOPp->Test__DOT__gen_io_b_0;
-    // ALWAYS at /home/samsow/chisel-crash-course/alu/sim/vout/Test.v:181
+    // ALWAYS at /home/samsow/myChisel/chisel-crash-course/vectorALU/sim/vout/Test.v:181
     vlTOPp->Test__DOT__gen__DOT__ctrlIn = ((IData)(vlTOPp->reset)
 					    ? 0U : (IData)(vlTOPp->Test__DOT__value));
-    // ALWAYS at /home/samsow/chisel-crash-course/alu/sim/vout/Test.v:181
+    // ALWAYS at /home/samsow/myChisel/chisel-crash-course/vectorALU/sim/vout/Test.v:181
     vlTOPp->Test__DOT__gen__DOT__aIn_0 = vlTOPp->Test__DOT__gen__DOT__value_1;
-    // ALWAYS at /home/samsow/chisel-crash-course/alu/sim/vout/Test.v:520
+    // ALWAYS at /home/samsow/myChisel/chisel-crash-course/vectorALU/sim/vout/Test.v:520
     vlTOPp->Test__DOT__alu__DOT__storedValue_0 = (0xffU 
 						  & ((0U 
 						      == (IData)(vlTOPp->Test__DOT__value))
@@ -217,7 +217,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__1(VTest__Syms* __restrict vlSymsp) {
 							   == (IData)(vlTOPp->Test__DOT__value))
 							   ? (IData)(vlTOPp->Test__DOT__alu__DOT___T_116)
 							   : 0U)))))));
-    // ALWAYS at /home/samsow/chisel-crash-course/alu/sim/vout/Test.v:181
+    // ALWAYS at /home/samsow/myChisel/chisel-crash-course/vectorALU/sim/vout/Test.v:181
     vlTOPp->Test__DOT__gen__DOT__ovflIn = ((~ (IData)(vlTOPp->reset)) 
 					   & (((1U 
 						& ((IData)(vlTOPp->Test__DOT__gen__DOT__value_1) 
@@ -259,11 +259,11 @@ VL_INLINE_OPT void VTest::_sequent__TOP__1(VTest__Syms* __restrict vlSymsp) {
 						   + (IData)(vlTOPp->Test__DOT__gen__DOT__value_2)));
     vlTOPp->Test__DOT__gen__DOT___GEN_10 = ((0U != (IData)(vlTOPp->Test__DOT__gen__DOT__ctrlIn)) 
 					    & (1U != (IData)(vlTOPp->Test__DOT__gen__DOT__ctrlIn)));
-    // ALWAYS at /home/samsow/chisel-crash-course/alu/sim/vout/Test.v:663
+    // ALWAYS at /home/samsow/myChisel/chisel-crash-course/vectorALU/sim/vout/Test.v:663
     vlTOPp->Test__DOT__value = ((IData)(vlTOPp->reset)
 				 ? 0U : ((IData)(vlTOPp->Test__DOT___T_9)
 					  ? 0U : (IData)(vlTOPp->Test__DOT___T_12)));
-    // ALWAYS at /home/samsow/chisel-crash-course/alu/sim/vout/Test.v:181
+    // ALWAYS at /home/samsow/myChisel/chisel-crash-course/vectorALU/sim/vout/Test.v:181
     if (vlTOPp->reset) {
 	vlTOPp->Test__DOT__gen__DOT__value_1 = 0U;
     } else {
@@ -277,7 +277,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__1(VTest__Syms* __restrict vlSymsp) {
 					    & (3U != (IData)(vlTOPp->Test__DOT__gen__DOT__ctrlIn)));
     vlTOPp->Test__DOT___T_9 = (5U == (IData)(vlTOPp->Test__DOT__value));
     vlTOPp->Test__DOT___T_12 = (7U & ((IData)(1U) + (IData)(vlTOPp->Test__DOT__value)));
-    // ALWAYS at /home/samsow/chisel-crash-course/alu/sim/vout/Test.v:181
+    // ALWAYS at /home/samsow/myChisel/chisel-crash-course/vectorALU/sim/vout/Test.v:181
     vlTOPp->Test__DOT__gen__DOT__value = ((IData)(vlTOPp->reset)
 					   ? 0U : (IData)(vlTOPp->Test__DOT__gen__DOT___T_66));
     vlTOPp->Test__DOT__gen__DOT___T_81 = (0xffU & ((IData)(1U) 

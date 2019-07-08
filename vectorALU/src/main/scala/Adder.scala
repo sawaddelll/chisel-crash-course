@@ -57,6 +57,7 @@ class ALU(dataBits: Int = 8, vLength: Int = 1) extends Module {
     //  } 
     }
     io.result := storedValue
+  //  io.result := out
     io.zero := !zeroVector.contains(false.B)
     io.overflow := overflowVector.contains(true.B)
     io.negative := negVector.contains(true.B)
