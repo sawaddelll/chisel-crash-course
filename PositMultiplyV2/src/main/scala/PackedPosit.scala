@@ -1,6 +1,8 @@
 // See README.md for license details.
-package PositDef
+//package PositDef
 
+//for lazy testing
+package example
 import chisel3._
 import chisel3.core.Bundle
 import chisel3.util._
