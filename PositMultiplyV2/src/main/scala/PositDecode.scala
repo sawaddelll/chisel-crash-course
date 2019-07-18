@@ -1,7 +1,7 @@
 // See README.md for license details.
 //package PositMultiply
 package example
-import PositDef._
+//import PositDef._ //changed all to example package
 import chisel3._
 import chisel3.util._
 import chisel3.core.Bundle
