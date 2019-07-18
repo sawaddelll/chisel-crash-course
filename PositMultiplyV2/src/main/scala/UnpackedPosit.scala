@@ -24,7 +24,7 @@ object UnpackedPositFunctions {
     val BITS: Int = PositDef.getUnsignedRegimeBits(width)
     val answer = SInt(PositDef.getSignedRegimeBits(width).W)
     answer := (unpackedPosit.exponent(PositDef.getUnsignedExponentBits(width, es) - 1, es) -
-      PositDef.getMaxSignedRegime(width)).asSInt()
+      PositDef.getMaxSignedRegime(width).asUInt).asSInt()
     return answer
   }
 }
