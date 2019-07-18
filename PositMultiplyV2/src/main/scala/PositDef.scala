@@ -1,5 +1,6 @@
 // See README.md for license details.
-package PositDef
+//package PositDef
+package example
 
 import chisel3._
 import chisel3.util._
