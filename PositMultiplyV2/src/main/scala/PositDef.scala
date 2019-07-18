@@ -192,7 +192,7 @@ class ShiftRightSticky(OUT_WIDTH: Int = 8, IN_WIDTH: Int = 8, SHIFT_VAL_WIDTH: I
         }
       } else {
         if(io.shift(i-1) == 1.U) {
-          valVector(i)(j) := valVector(i - 1)(j + pow(2, i-1))
+          valVector(i)(j) := valVector((i - 1).toDouble)(j + pow(2, i-1)) //////double??
         } else {
           valVector(i)(j) := valVector(i - 1)(j)
         }
