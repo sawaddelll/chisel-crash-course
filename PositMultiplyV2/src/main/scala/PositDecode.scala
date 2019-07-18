@@ -71,7 +71,7 @@ class PositDecode(width: Int = 8, es: Int = 1) extends Module{
 
   //added this because extending in one line where also negating or adding did not work
   val cl0extended = Wire(UInt(LOCAL_UNSIGNED_REGIME_BITS.W))
-  cl0extended := cl0(LOCAL_UNSIGNED_REGIME_BITS.W) //trying to change this width?
+  cl0extended := cl0//(LOCAL_UNSIGNED_REGIME_BITS.W) //trying to change this width?
 
   when (isSpecial === 1.U) {
     unsignedRegime := 0.U(LOCAL_UNSIGNED_REGIME_BITS.W)
@@ -131,7 +131,7 @@ class PositDecode(width: Int = 8, es: Int = 1) extends Module{
   } else {
     // There is no ES to extract
     io.out.fraction := esAndFractionBits(LOCAL_MAX_REGIME_FIELD_SIZE-3, 0)
-    io.out.exponent := unsignedRegime(LOCAL_UNSIGNED_EXPONENT_BITS.W) //trying to change width
+    io.out.exponent := unsignedRegime//(LOCAL_UNSIGNED_EXPONENT_BITS.W) //trying to change width
   }
 
 }
