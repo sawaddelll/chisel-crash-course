@@ -1,10 +1,11 @@
 // See README.md for license details.
-package PositDef
+//package PositDef
+package example
 
 import chisel3._
 //import chisel3.util._
 import chisel3.core.Bundle
-import PositDef._
+//import PositDef._
 
 class UnpackedPosit (width: Int, es : Int) extends Bundle {
   val isZero = Bool()
