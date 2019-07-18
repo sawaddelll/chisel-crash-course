@@ -55,7 +55,7 @@ class PositDecode(width: Int = 8, es: Int = 1) extends Module{
 
   //TODO: TEST CountLeadingZeros Module, that takes in remainderXor and outputs cl0
   //Verilog: CountLeadingZeros #(.WIDTH(LOCAL_MAX_REGIME_FIELD_SIZE - 1)) clz(.in(remainderXor), .out(cl0))
-  val countingLeadingZeros = new CountLeadingZeros(WIDTH = LOCAL_MAX_REGIME_FIELD_SIZE - 1)
+  val countingLeadingZeros = Module(new CountLeadingZeros(WIDTH = LOCAL_MAX_REGIME_FIELD_SIZE - 1))
   countingLeadingZeros.io.in := remainderXor
   cl0 := countingLeadingZeros.io.out
 
