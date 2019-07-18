@@ -170,7 +170,7 @@ class ShiftRightSticky(OUT_WIDTH: Int = 8, IN_WIDTH: Int = 8, SHIFT_VAL_WIDTH: I
   val valStickyAnd = Wire(UInt((NUM_STEPS + 1).W))
   val maxShift = Wire(UInt(1.W))
 
-  val padding = new ZeroPadRight(inWidth = IN_WIDTH, outWidth = OUT_WIDTH)
+  val padding = Module(new ZeroPadRight(inWidth = IN_WIDTH, outWidth = OUT_WIDTH))
   padding.io.in := io.in
   valVector(0) := padding.io.out
 
@@ -279,7 +279,7 @@ class CountLeadingZerosTree(L: Int = 8, R: Int = 8) extends Module {
   }
 
   if (L >= 2) {
-    val leftCount = new CountLeadingZerosTree (L = L, R = L)
+    val leftCount = Module(new CountLeadingZerosTree (L = L, R = L))
     leftCount.io.left := io.left(L-1, L-1-L2)
     leftCount.io.right := io.left(L2-1, 0)
     lCount := leftCount.io.out
@@ -288,7 +288,7 @@ class CountLeadingZerosTree(L: Int = 8, R: Int = 8) extends Module {
   }
 
   if (R >= 2) {
-    val leftCount = new CountLeadingZerosTree (L = R2A, R = R2B)
+    val leftCount = Module(new CountLeadingZerosTree (L = R2A, R = R2B))
     leftCount.io.left := io.left(R-1, R-1-R2A)
     leftCount.io.right := io.left(R2B-1, 0)
     rCount := leftCount.io.out
@@ -342,7 +342,7 @@ class CountLeadingZeros(WIDTH: Int = 6, ADD_OFFSET: Int = 0) extends Module {
 
   inPad(WIDTH - 1) := io.in
 
-  val tree = new CountLeadingZerosTree(L = L, R = R)
+  val tree = Module(new CountLeadingZerosTree(L = L, R = R))
   tree.io.left := inPad(WIDTH+ADD_OFFSET - 1, WIDTH+ADD_OFFSET - 1 - L)
   tree.io.right := io.in(R-1, 0)
   io.out := tree.io.out
