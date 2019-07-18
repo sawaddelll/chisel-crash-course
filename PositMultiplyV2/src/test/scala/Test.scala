@@ -26,11 +26,11 @@ class DataGen(width: Int = 8,  es: Int = 1) extends Module {
   //aBits := 01100010.Bits
   bPacked.bits := bBits
   
-  val decoding = new PositDecode(width = width, es = es)
+  val decoding = Module(new PositDecode(width = width, es = es))
   decoding.io.in := aPacked
   io.a := decoding.io.out
 
-  val decodingB = new PositDecode(width = width, es = es)
+  val decodingB = Module(new PositDecode(width = width, es = es))
   decoding.io.in := bPacked
   io.b := decoding.io.out
 }
@@ -44,17 +44,17 @@ class Test extends Module {
   multiply.io.a <> gen.io.a
   multiply.io.b <> gen.io.b
   
-  val encodingInputA = new PositEncode(width = width, es)
+  val encodingInputA = Module(new PositEncode(width = width, es))
   encodingInputA.io.in := gen.io.a
   val aValue = Wire(new PackedPosit(width = width, es = es))
   aValue <> encodingInputA.io.out
 
-  val encodingInputB = new PositEncode(width = width, es)
+  val encodingInputB = Module(new PositEncode(width = width, es))
   encodingInputB.io.in := gen.io.b
   val bValue = Wire(new PackedPosit(width = width, es = es))
   bValue <> encodingInputB.io.out
 
-  val encodingOutput = new PositEncode(width = width, es)
+  val encodingOutput = Module(new PositEncode(width = width, es))
   encodingOutput.io.in := multiply.io.out
   val outputValue = Wire(new PackedPosit(width = width, es = es))
   outputValue <> encodingOutput.io.out
