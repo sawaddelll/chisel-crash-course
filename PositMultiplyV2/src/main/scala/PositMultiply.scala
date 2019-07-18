@@ -46,8 +46,8 @@ class PositMultiply(width: Int = 8, es: Int = 1, trailing_bits: Int = 2) extends
   val normalStickyBit = Wire(UInt(1.W))
 
   //TODO-TEST ShiftRight, outputs underflowProduct and underflowSticky
-  val shiftRightWithSticky = new ShiftRightSticky(OUT_WIDTH = trailing_bits + 1,
-    IN_WIDTH = FRAC_PRODUCT_BITS, SHIFT_VAL_WIDTH = EXP_BIAS_BITS)
+  val shiftRightWithSticky = Module(new ShiftRightSticky(OUT_WIDTH = trailing_bits + 1,
+    IN_WIDTH = FRAC_PRODUCT_BITS, SHIFT_VAL_WIDTH = EXP_BIAS_BITS))
 
   shiftRightWithSticky.io.in := abShiftedProduct
   shiftRightWithSticky.io.shift := underflowShift
@@ -61,8 +61,8 @@ class PositMultiply(width: Int = 8, es: Int = 1, trailing_bits: Int = 2) extends
 
 
   //TODO-TEST ZeroPadRight, outputs normalTrailingBits
-  val zeroPadRight = new ZeroPadRight(inWidth = FRAC_PRODUCT_BITS - 2 - LOCAL_FRACTION_BITS,
-                                      outWidth = trailing_bits)
+  val zeroPadRight = Module(new ZeroPadRight(inWidth = FRAC_PRODUCT_BITS - 2 - LOCAL_FRACTION_BITS,
+                                      outWidth = trailing_bits))
   zeroPadRight.io.in := abShiftedProduct(FRAC_PRODUCT_BITS-2-LOCAL_FRACTION_BITS-1, 0)
     normalTrailingBits := zeroPadRight.io.out
   //normalTrailingBits := 3.U //in current test, is 11
