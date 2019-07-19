@@ -124,7 +124,7 @@ class PositMultiply(width: Int = 8, es: Int = 1, trailing_bits: Int = 2) extends
   when(io.out.isInf || io.out.isZero || abExpTooLarge.asBool()) {
     io.out.fraction := 0.U
   } .otherwise {
-    io.out.fraction := abShiftedProduct(FRAC_PRODUCT_BITS-2, FRAC_PRODUCT_BITS-2-LOCAL_FRACTION_BITS)
+    io.out.fraction := abShiftedProduct(FRAC_PRODUCT_BITS-2, FRAC_PRODUCT_BITS-2-LOCAL_FRACTION_BITS+1)
   }
 
   when(io.out.isInf || io.a.isZero || io.b.isZero || abExpTooLarge.asBool()) {

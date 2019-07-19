@@ -56,8 +56,6 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/classes/example/PositEncode$$anonfun$9.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	example/CountLeadingZerosTree$$anonfun$5.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/classes/example/CountLeadingZerosTree$$anonfun$5.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	example/ZeroPadRight$$anon$1.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/classes/example/ZeroPadRight$$anon$1.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	example/PositMultiply$$anonfun$18.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/classes/example/PositMultiply$$anonfun$18.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	example/CountLeadingZerosTree$$anonfun$15.class[0m
@@ -94,6 +92,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/classes/example/PositMultiply$$anonfun$5.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	example/CountLeadingZeros$$anonfun$12.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/classes/example/CountLeadingZeros$$anonfun$12.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	example/CountLeadingZerosTree$$anon$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/classes/example/CountLeadingZerosTree$$anon$4.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	example/PositDecode$$anonfun$1.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/classes/example/PositDecode$$anonfun$1.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	example/PositMultiply$$anonfun$21.class[0m
@@ -116,8 +116,6 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/classes/example/PositMultiply$$anonfun$6.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	example/PositMultiply$$anonfun$19.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/classes/example/PositMultiply$$anonfun$19.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	example/ShiftRightSticky$$anon$2.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/classes/example/ShiftRightSticky$$anon$2.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	example/PositMultiply$$anonfun$3.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/classes/example/PositMultiply$$anonfun$3.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	example/PositMultiply$$anonfun$2.class[0m
@@ -134,8 +132,6 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/classes/example/ALU$$anon$1.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	example/CountLeadingZerosTree$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/classes/example/CountLeadingZerosTree$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	example/CountLeadingZeros$$anon$4.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/classes/example/CountLeadingZeros$$anon$4.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	example/PositMultiply$$anonfun$8.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/classes/example/PositMultiply$$anonfun$8.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	example/PackedPositFunctions.class[0m
@@ -154,6 +150,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/classes/example/PositEncode$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	example/PositMultiply$$anonfun$22.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/classes/example/PositMultiply$$anonfun$22.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	example/ZeroPadRight$$anon$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/classes/example/ZeroPadRight$$anon$2.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	example/PositMultiply$$anonfun$20.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/classes/example/PositMultiply$$anonfun$20.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	example/ALU$$anonfun$1$$anonfun$apply$mcVI$sp$8.class[0m
@@ -162,8 +160,6 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/classes/example/CountLeadingZerosTree$$anonfun$18.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	example/PositMultiply$$anonfun$4.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/classes/example/PositMultiply$$anonfun$4.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	example/CountLeadingZerosTree$$anon$3.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/classes/example/CountLeadingZerosTree$$anon$3.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	example/PositEncode$$anonfun$2.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/classes/example/PositEncode$$anonfun$2.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	example/UnpackedPosit.class[0m
@@ -206,6 +202,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/classes/example/CountLeadingZeros.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	example/PositMultiply$$anonfun$10.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/classes/example/PositMultiply$$anonfun$10.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	example/CountLeadingZeros$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/classes/example/CountLeadingZeros$$anon$1.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	example/Elaborate$delayedInit$body.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/classes/example/Elaborate$delayedInit$body.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	example/ALU$$anonfun$1.class[0m
@@ -232,4 +230,6 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/classes/example/CountLeadingZeros$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	example/CountLeadingZerosTree$$anonfun$4.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/classes/example/CountLeadingZerosTree$$anonfun$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	example/ShiftRightSticky$$anon$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/classes/example/ShiftRightSticky$$anon$3.class[0m
 [0m[[0m[0minfo[0m] [0m[0mDone packaging.[0m

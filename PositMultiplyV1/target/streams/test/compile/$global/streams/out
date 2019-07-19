@@ -1,3 +1,10 @@
-[0m[[0m[33mwarn[0m] [0m[0mthere were two deprecation warnings; re-run with -deprecation for details[0m
-[0m[[0m[33mwarn[0m] [0m[0mthere were 26 feature warnings; re-run with -feature for details[0m
-[0m[[0m[33mwarn[0m] [0m[0mtwo warnings found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/src/test/scala/Test.scala:39:32: not found: type PositEncode[0m
+[0m[[0m[31merror[0m] [0m[0m  val encodeTestA = Module(new PositEncode(width = width, es = es))[0m
+[0m[[0m[31merror[0m] [0m[0m                               ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/src/test/scala/Test.scala:39:50: reassignment to val[0m
+[0m[[0m[31merror[0m] [0m[0m  val encodeTestA = Module(new PositEncode(width = width, es = es))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/src/test/scala/Test.scala:39:62: reassignment to val[0m
+[0m[[0m[31merror[0m] [0m[0m  val encodeTestA = Module(new PositEncode(width = width, es = es))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                             ^[0m
+[0m[[0m[31merror[0m] [0m[0mthree errors found[0m

@@ -9879,57 +9879,57 @@
 [0m[[0m[0mdebug[0m] [0m[0mignoring unhandled DependencyDescriptorMediator: class sbt.internal.librarymanagement.IvyScalaUtil$OverrideScalaMediator[0m
 [0m[[0m[0mdebug[0m] [0m[0m	resolved ivy file produced in cache[0m
 [0m[[0m[0mdebug[0m] [0m[0m:: downloading artifacts ::[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] ch.qos.logback#logback-core;1.2.3!logback-core.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang.modules#scala-jline;2.12.1!scala-jline.jar(bundle)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] edu.berkeley.cs#firrtl_2.11;1.1.7!firrtl_2.11.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.11!jansi.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scalacheck#scalacheck_2.11;1.13.4!scalacheck_2.11.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] edu.berkeley.cs#chisel-iotesters_2.11;1.2.10!chisel-iotesters_2.11.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.yaml#snakeyaml;1.17!snakeyaml.jar(bundle)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.11;1.0.5!scala-xml_2.11.jar(bundle)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] net.jcazevedo#moultingyaml_2.11;0.4.0!moultingyaml_2.11.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] com.ibm.icu#icu4j;58.2!icu4j.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scalatest#scalatest_2.11;3.0.1!scalatest_2.11.jar(bundle)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] com.typesafe.scala-logging#scala-logging_2.11;3.7.2!scala-logging_2.11.jar(bundle)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] com.github.nscala-time#nscala-time_2.11;2.14.0!nscala-time_2.11.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] edu.berkeley.cs#chisel3_2.11;3.1.8!chisel3_2.11.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.antlr#antlr4-runtime;4.7.1!antlr4-runtime.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang#scala-library;2.11.12!scala-library.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4!scala-parser-combinators_2.11.jar(bundle)[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.json4s#json4s-scalap_2.11;3.5.3!json4s-scalap_2.11.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.11.12!scala-reflect.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.json4s#json4s-native_2.11;3.5.3!json4s-native_2.11.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] ch.qos.logback#logback-classic;1.2.3!logback-classic.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] com.github.scopt#scopt_2.11;3.7.0!scopt_2.11.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] joda-time#joda-time;2.9.4!joda-time.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.11;1.0.6!scala-xml_2.11.jar(bundle)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] com.thoughtworks.paranamer#paranamer;2.8!paranamer.jar(bundle)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.antlr#antlr4;4.7.1!antlr4.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.11.12!scala-compiler.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.json4s#json4s-core_2.11;3.5.3!json4s-core_2.11.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] jline#jline;2.14.3!jline.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.abego.treelayout#org.abego.treelayout.core;1.0.3!org.abego.treelayout.core.jar(bundle)[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.joda#joda-convert;1.2!joda-convert.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] edu.berkeley.cs#firrtl-interpreter_2.11;1.1.7!firrtl-interpreter_2.11.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.glassfish#javax.json;1.0.4!javax.json.jar(bundle)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] edu.berkeley.cs#treadle_2.11;1.0.5!treadle_2.11.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.slf4j#slf4j-api;1.7.25!slf4j-api.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] net.jcazevedo#moultingyaml_2.11;0.4.0!moultingyaml_2.11.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.json4s#json4s-native_2.11;3.5.3!json4s-native_2.11.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.11.12!scala-compiler.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.11!jansi.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.antlr#antlr4-runtime;4.7.1!antlr4-runtime.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] com.thoughtworks.paranamer#paranamer;2.8!paranamer.jar(bundle)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] jline#jline;2.14.3!jline.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.antlr#ST4;4.0.8!ST4.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.json4s#json4s-core_2.11;3.5.3!json4s-core_2.11.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] com.github.scopt#scopt_2.11;3.7.0!scopt_2.11.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.11;1.0.6!scala-xml_2.11.jar(bundle)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] com.ibm.icu#icu4j;58.2!icu4j.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.slf4j#slf4j-api;1.7.25!slf4j-api.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.glassfish#javax.json;1.0.4!javax.json.jar(bundle)[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.antlr#antlr-runtime;3.5.2!antlr-runtime.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] ch.qos.logback#logback-classic;1.2.3!logback-classic.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] edu.berkeley.cs#treadle_2.11;1.0.5!treadle_2.11.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] ch.qos.logback#logback-core;1.2.3!logback-core.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scalatest#scalatest_2.11;3.0.1!scalatest_2.11.jar(bundle)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang.modules#scala-jline;2.12.1!scala-jline.jar(bundle)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.yaml#snakeyaml;1.17!snakeyaml.jar(bundle)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scalacheck#scalacheck_2.11;1.13.4!scalacheck_2.11.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] com.github.nscala-time#nscala-time_2.11;2.14.0!nscala-time_2.11.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang#scala-library;2.11.12!scala-library.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.abego.treelayout#org.abego.treelayout.core;1.0.3!org.abego.treelayout.core.jar(bundle)[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scalactic#scalactic_2.11;3.0.1!scalactic_2.11.jar(bundle)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] edu.berkeley.cs#firrtl-interpreter_2.11;1.1.7!firrtl-interpreter_2.11.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.11.12!scala-reflect.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.json4s#json4s-ast_2.11;3.5.3!json4s-ast_2.11.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m:: resolution report :: resolve 1028ms :: artifacts dl 23ms[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for chisel-module-template#chisel-module-template_2.11;3.1.1 compile produced in /home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/target/scala-2.11/resolution-cache/reports/chisel-module-template-chisel-module-template_2.11-compile.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for chisel-module-template#chisel-module-template_2.11;3.1.1 runtime produced in /home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/target/scala-2.11/resolution-cache/reports/chisel-module-template-chisel-module-template_2.11-runtime.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for chisel-module-template#chisel-module-template_2.11;3.1.1 test produced in /home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/target/scala-2.11/resolution-cache/reports/chisel-module-template-chisel-module-template_2.11-test.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for chisel-module-template#chisel-module-template_2.11;3.1.1 provided produced in /home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/target/scala-2.11/resolution-cache/reports/chisel-module-template-chisel-module-template_2.11-provided.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for chisel-module-template#chisel-module-template_2.11;3.1.1 optional produced in /home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/target/scala-2.11/resolution-cache/reports/chisel-module-template-chisel-module-template_2.11-optional.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for chisel-module-template#chisel-module-template_2.11;3.1.1 compile-internal produced in /home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/target/scala-2.11/resolution-cache/reports/chisel-module-template-chisel-module-template_2.11-compile-internal.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for chisel-module-template#chisel-module-template_2.11;3.1.1 runtime-internal produced in /home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/target/scala-2.11/resolution-cache/reports/chisel-module-template-chisel-module-template_2.11-runtime-internal.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for chisel-module-template#chisel-module-template_2.11;3.1.1 test-internal produced in /home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/target/scala-2.11/resolution-cache/reports/chisel-module-template-chisel-module-template_2.11-test-internal.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for chisel-module-template#chisel-module-template_2.11;3.1.1 plugin produced in /home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/target/scala-2.11/resolution-cache/reports/chisel-module-template-chisel-module-template_2.11-plugin.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for chisel-module-template#chisel-module-template_2.11;3.1.1 pom produced in /home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/target/scala-2.11/resolution-cache/reports/chisel-module-template-chisel-module-template_2.11-pom.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for chisel-module-template#chisel-module-template_2.11;3.1.1 scala-tool produced in /home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/target/scala-2.11/resolution-cache/reports/chisel-module-template-chisel-module-template_2.11-scala-tool.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	resolve done (1028ms resolve - 23ms download)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] com.typesafe.scala-logging#scala-logging_2.11;3.7.2!scala-logging_2.11.jar(bundle)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.11;1.0.5!scala-xml_2.11.jar(bundle)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] edu.berkeley.cs#chisel3_2.11;3.1.8!chisel3_2.11.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.antlr#antlr4;4.7.1!antlr4.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] edu.berkeley.cs#firrtl_2.11;1.1.7!firrtl_2.11.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4!scala-parser-combinators_2.11.jar(bundle)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] edu.berkeley.cs#chisel-iotesters_2.11;1.2.10!chisel-iotesters_2.11.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m:: resolution report :: resolve 1018ms :: artifacts dl 23ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for chisel-module-template#chisel-module-template_2.11;3.1.1 compile produced in /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/resolution-cache/reports/chisel-module-template-chisel-module-template_2.11-compile.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for chisel-module-template#chisel-module-template_2.11;3.1.1 runtime produced in /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/resolution-cache/reports/chisel-module-template-chisel-module-template_2.11-runtime.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for chisel-module-template#chisel-module-template_2.11;3.1.1 test produced in /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/resolution-cache/reports/chisel-module-template-chisel-module-template_2.11-test.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for chisel-module-template#chisel-module-template_2.11;3.1.1 provided produced in /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/resolution-cache/reports/chisel-module-template-chisel-module-template_2.11-provided.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for chisel-module-template#chisel-module-template_2.11;3.1.1 optional produced in /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/resolution-cache/reports/chisel-module-template-chisel-module-template_2.11-optional.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for chisel-module-template#chisel-module-template_2.11;3.1.1 compile-internal produced in /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/resolution-cache/reports/chisel-module-template-chisel-module-template_2.11-compile-internal.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for chisel-module-template#chisel-module-template_2.11;3.1.1 runtime-internal produced in /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/resolution-cache/reports/chisel-module-template-chisel-module-template_2.11-runtime-internal.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for chisel-module-template#chisel-module-template_2.11;3.1.1 test-internal produced in /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/resolution-cache/reports/chisel-module-template-chisel-module-template_2.11-test-internal.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for chisel-module-template#chisel-module-template_2.11;3.1.1 plugin produced in /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/resolution-cache/reports/chisel-module-template-chisel-module-template_2.11-plugin.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for chisel-module-template#chisel-module-template_2.11;3.1.1 pom produced in /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/resolution-cache/reports/chisel-module-template-chisel-module-template_2.11-pom.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for chisel-module-template#chisel-module-template_2.11;3.1.1 scala-tool produced in /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/target/scala-2.11/resolution-cache/reports/chisel-module-template-chisel-module-template_2.11-scala-tool.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	resolve done (1018ms resolve - 23ms download)[0m
 [0m[[0m[0minfo[0m] [0m[0mDone updating.[0m

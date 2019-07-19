@@ -69,15 +69,15 @@ VL_INLINE_OPT void VTest::_sequent__TOP__1(VTest__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    VTest::_sequent__TOP__1\n"); );
     VTest* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
-    // ALWAYS at /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/sim/vout/Test.v:660
+    // ALWAYS at /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/sim/vout/Test.v:684
     if (VL_UNLIKELY((1U & (~ (IData)(vlTOPp->reset))))) {
-	VL_FWRITEF(0x80000002U,"a.exponent is 00010 \n");
+	VL_FWRITEF(0x80000002U,"a.exponent is 00000 \n");
     }
     if (VL_UNLIKELY((1U & (~ (IData)(vlTOPp->reset))))) {
-	VL_FWRITEF(0x80000002U,"a.fraction is 0100 \n");
+	VL_FWRITEF(0x80000002U,"a.fraction is 0010 \n");
     }
     if (VL_UNLIKELY((1U & (~ (IData)(vlTOPp->reset))))) {
-	VL_FWRITEF(0x80000002U,"b.exponent is 00001 \n");
+	VL_FWRITEF(0x80000002U,"b.exponent is 00000 \n");
     }
     if (VL_UNLIKELY((1U & (~ (IData)(vlTOPp->reset))))) {
 	VL_FWRITEF(0x80000002U,"b.fraction is 1000 \n");
@@ -92,25 +92,32 @@ VL_INLINE_OPT void VTest::_sequent__TOP__1(VTest__Syms* __restrict vlSymsp) {
 	VL_FWRITEF(0x80000002U,"out.isInf is 0 \n");
     }
     if (VL_UNLIKELY((1U & (~ (IData)(vlTOPp->reset))))) {
-	VL_FWRITEF(0x80000002U,"out.trailingBits is 00000011 \n");
+	VL_FWRITEF(0x80000002U,"out.trailingBits is 00000010 \n");
     }
     if (VL_UNLIKELY((1U & (~ (IData)(vlTOPp->reset))))) {
 	VL_FWRITEF(0x80000002U,"out.stickyBit is 1 \n");
     }
     if (VL_UNLIKELY((1U & (~ (IData)(vlTOPp->reset))))) {
-	VL_FWRITEF(0x80000002U,"out.exponent is 10111 \n");
+	VL_FWRITEF(0x80000002U,"out.exponent is 10100 \n");
     }
     if (VL_UNLIKELY((1U & (~ (IData)(vlTOPp->reset))))) {
-	VL_FWRITEF(0x80000002U,"out.fraction is 1100 \n");
+	VL_FWRITEF(0x80000002U,"out.fraction is 1011 \n");
     }
     if (VL_UNLIKELY((1U & (~ (IData)(vlTOPp->reset))))) {
-	VL_FWRITEF(0x80000002U,"a is 00000010");
+	VL_FWRITEF(0x80000002U,"a is 00000001 \n");
     }
     if (VL_UNLIKELY((1U & (~ (IData)(vlTOPp->reset))))) {
-	VL_FWRITEF(0x80000002U,"b is 00000001");
+	VL_FWRITEF(0x80000002U,"b is 00000001 \n");
     }
     if (VL_UNLIKELY((1U & (~ (IData)(vlTOPp->reset))))) {
-	VL_FWRITEF(0x80000002U,"out is 01111110");
+	VL_FWRITEF(0x80000002U,"out is 01111100 \n");
+    }
+    // ALWAYS at /home/samsow/myChisel/chisel-crash-course/PositMultiplyV2/sim/vout/Test.v:248
+    if (VL_UNLIKELY((1U & (~ (IData)(vlTOPp->reset))))) {
+	VL_FWRITEF(0x80000002U,"a before decoding is 01100010 \n");
+    }
+    if (VL_UNLIKELY((1U & (~ (IData)(vlTOPp->reset))))) {
+	VL_FWRITEF(0x80000002U,"b before decoding is 01101000 \n");
     }
 }
 
