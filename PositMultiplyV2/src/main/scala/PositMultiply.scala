@@ -54,7 +54,7 @@ class PositMultiply(width: Int = 8, es: Int = 1, trailing_bits: Int = 2) extends
   underflowProduct:= shiftRightWithSticky.io.out
   underflowSticky := shiftRightWithSticky.io.sticky
 
-  val unusedStickyAnd = UInt(1.W)
+  val unusedStickyAnd = Wire(UInt(1.W))
   unusedStickyAnd := shiftRightWithSticky.io.stickyAnd
   //underflowProduct := 0.U //in current test, is 000
   //underflowSticky  := 1.U //in current test, is 1
