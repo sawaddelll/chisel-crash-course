@@ -286,7 +286,7 @@ class CountLeadingZerosTree(L: Int = 8, R: Int = 8) extends Module {
   rCountExtend := rCountExtendVec.asUInt                 
 
   if (L >= 2) {
-    val leftCount = Module(new CountLeadingZerosTree (L = L, R = L))
+    val leftCount = Module(new CountLeadingZerosTree (L = L2, R = L2))
     leftCount.io.left := io.left(L-1, L-1-L2)
     leftCount.io.right := io.left(L2-1, 0)
     lCount := leftCount.io.out
