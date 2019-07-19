@@ -167,7 +167,7 @@ class ShiftRightSticky(OUT_WIDTH: Int = 8, IN_WIDTH: Int = 8, SHIFT_VAL_WIDTH: I
 
   val valVector = Wire(Vec(NUM_STEPS + 1, UInt(OUT_WIDTH.W)))
   val valVectorOfVecs = Wire(Vec(NUM_STEPS+1, Vec(OUT_WIDTH, Bool())))
-  for (i <- NUM_STEPS-1 to 0 by -1) {
+  for (i <- NUM_STEPS-1 until 0 by -1) {
     valVector(i) := valVectorOfVecs(i).asUInt
   }
     
@@ -183,7 +183,7 @@ class ShiftRightSticky(OUT_WIDTH: Int = 8, IN_WIDTH: Int = 8, SHIFT_VAL_WIDTH: I
 
   val padding = Module(new ZeroPadRight(inWidth = IN_WIDTH, outWidth = OUT_WIDTH))
   padding.io.in := io.in
-  valVectorOfVecs(0) := padding.io.out
+  valVector(0) := padding.io.out
 
   if (IN_WIDTH <= OUT_WIDTH) {
     valStickyVec(0) := 0.U(1.W)
