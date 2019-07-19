@@ -86,7 +86,7 @@ class PositDecode(width: Int = 8, es: Int = 1) extends Module{
       unsignedRegime := cl0extended
     } .otherwise {
       //is ~ actually wrong, or just intelliJ?????????????????????????
-      unsignedRegime := LOCAL_MAX_SIGNED_REGIME.U(LOCAL_UNSIGNED_REGIME_BITS.W) + ~cl0extended
+      unsignedRegime := LOCAL_MAX_SIGNED_REGIME.U/*(LOCAL_UNSIGNED_REGIME_BITS.W)*/ + ~cl0/*extended*/
     }
   }
 
