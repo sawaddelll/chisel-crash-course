@@ -274,7 +274,10 @@ class CountLeadingZerosTree(L: Int = 8, R: Int = 8) extends Module {
   val rCountExtendVec = Wire(Vec(PositDef.clog2(L+1), Bool()))///another VEC
 
   //rCountExtend(PositDef.clog2(R+1)-1, 0) := rCount
-  rCountExtendVec(PositDef.clog2(R+1)-1, 0) := rCount
+  //rCountExtendVec(PositDef.clog2(R+1)-1, 0) := rCount //this didn't work, because of range of values again????
+  for (i <- PositDef.clog2(R+1)-1 to 0 by -1) {
+    rCountExtendVec(i) := rCount(i)
+  }
                              
   for (i <- PositDef.clog2(L+1)-1 until PositDef.clog2(R+1)-1 by -1) {
     rCountExtendVec(i) := 0.U(1.W)
