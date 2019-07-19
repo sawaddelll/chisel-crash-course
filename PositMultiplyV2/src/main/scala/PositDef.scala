@@ -186,7 +186,7 @@ class ShiftRightSticky(OUT_WIDTH: Int = 8, IN_WIDTH: Int = 8, SHIFT_VAL_WIDTH: I
   padding.io.in := io.in
   //valVector(0) := padding.io.out
   for (i <- 0 to OUT_WIDTH-1) {
-    valVectorOfVecs(i) := padding.io.out(i)
+    valVectorOfVecs(0)(i) := padding.io.out(i)
   }
     
   if (IN_WIDTH <= OUT_WIDTH) {
