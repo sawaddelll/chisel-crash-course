@@ -335,7 +335,7 @@ class CountLeadingZeros(WIDTH: Int = 6, ADD_OFFSET: Int = 0) extends Module {
   assert(R > 0)
 
   val inPad = Wire(UInt((WIDTH+ADD_OFFSET).W))
-  val inPadVec = Wire(Vec(WIDTH+ADD_OFFSET, Bool()) //another vector to handle single bit assignment
+  val inPadVec = Wire(Vec(WIDTH+ADD_OFFSET, Bool())) //another vector to handle single bit assignment
 
   for(i <- WIDTH+ADD_OFFSET-1 to WIDTH by -1) {
     inPadVec(i) := 0.U(1.W)
