@@ -223,8 +223,8 @@ class ShiftRightSticky(OUT_WIDTH: Int = 8, IN_WIDTH: Int = 8, SHIFT_VAL_WIDTH: I
       stickyHelper := 0.U
       stickyAndHelper := 1.U
     }
-    valStickyVec(i) := valSticky(i - 1) | stickyHelper
-    valStickyAndVec(i) := valStickyAnd(i-1) & stickyAndHelper
+    valStickyVec(i) := valStickyVec(i - 1) | stickyHelper
+    valStickyAndVec(i) := valStickyAndVec(i-1) & stickyAndHelper
 
   }
 
