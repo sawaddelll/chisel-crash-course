@@ -129,7 +129,7 @@ class PositDecode(width: Int = 8, es: Int = 1) extends Module{
     // The entire ES field may not be present (it could be truncated),
     // but the shift above will ensure that we are only reading 0s for the
     // other values
-    esBits := esAndFractionBits(LOCAL_MAX_REGIME_FIELD_SIZE-3, LOCAL_MAX_REGIME_FIELD_SIZE-3-es)
+    esBits := esAndFractionBits(LOCAL_MAX_REGIME_FIELD_SIZE-3, LOCAL_MAX_REGIME_FIELD_SIZE-3-es+1)
 
     io.out.fraction := esAndFractionBits(LOCAL_MAX_REGIME_FIELD_SIZE-3-es, 0)
     io.out.exponent := Cat(unsignedRegime, esBits)
