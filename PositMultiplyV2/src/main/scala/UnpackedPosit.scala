@@ -22,7 +22,7 @@ class UnpackedPosit (width: Int, es : Int) extends Bundle {
 object UnpackedPositFunctions {
   def signedRegime(unpackedPosit: UnpackedPosit, width: Int, es: Int): SInt = {
     val BITS: Int = PositDef.getUnsignedRegimeBits(width)
-    val answer = SInt(PositDef.getSignedRegimeBits(width).W)
+    val answer = Wire(SInt(PositDef.getSignedRegimeBits(width).W))
     answer := (unpackedPosit.exponent(PositDef.getUnsignedExponentBits(width, es) - 1, es) -
       PositDef.getMaxSignedRegime(width).asUInt).asSInt()
     return answer
