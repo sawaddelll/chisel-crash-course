@@ -47,8 +47,8 @@ class PositDecode(width: Int = 8, es: Int = 1) extends Module{
   // shifted by extra regime bits
   val esAndFractionBits = Wire(UInt((LOCAL_MAX_REGIME_FIELD_SIZE-2).W))
 
-  // Our extracted fraction
-  val fractionBits = Wire(UInt(LOCAL_FRACTION_BITS.W))
+  // Our extracted fraction //TODO-This was unused in the Verilog module, why is it here?
+  //val fractionBits = Wire(UInt(LOCAL_FRACTION_BITS.W))
 
   for(i <- LOCAL_MAX_REGIME_FIELD_SIZE-1 until 0 by -1) {
     remainderXorVec(i - 1) := remainderBits(i) ^ remainderBits(i - 1)
