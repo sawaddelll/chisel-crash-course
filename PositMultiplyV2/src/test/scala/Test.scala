@@ -69,7 +69,7 @@ class Test extends Module {
 
   output <> multiply.io.out
 
-  while(true) {
+  //while(true) {
     printf("a.exponent is %b \n",gen.io.a.exponent)
     printf("a.fraction is %b \n", gen.io.a.fraction)
     printf("b.exponent is %b \n", gen.io.b.exponent)
@@ -89,7 +89,7 @@ class Test extends Module {
     printf("b is %b", bValue.bits)
     printf("out is %b", outputValue.bits)
 
-  }
+  //}
 
 }
 
