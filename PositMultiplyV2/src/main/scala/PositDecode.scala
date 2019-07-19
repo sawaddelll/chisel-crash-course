@@ -51,8 +51,13 @@ class PositDecode(width: Int = 8, es: Int = 1) extends Module{
   val fractionBits = Wire(UInt(LOCAL_FRACTION_BITS.W))
 
   for(i <- LOCAL_MAX_REGIME_FIELD_SIZE-1 until 0 by -1) {
-    remainderXor(i - 1) := remainderBits(i) ^ remainderBits(i - 1)
+    remainderXorVec(i - 1) := remainderBits(i) ^ remainderBits(i - 1)
   }
+  
+  //Changed above for loop to affect a Vec, remainderXorVec, because chisel won't allow assigning to partial bits of a value
+  //assign remainderXor to remainderXorVec and use remainderXor everywhere else
+  remainderXor := remainderXorVec.asUInt 
+  
 
   //TODO: TEST CountLeadingZeros Module, that takes in remainderXor and outputs cl0
   //Verilog: CountLeadingZeros #(.WIDTH(LOCAL_MAX_REGIME_FIELD_SIZE - 1)) clz(.in(remainderXor), .out(cl0))
