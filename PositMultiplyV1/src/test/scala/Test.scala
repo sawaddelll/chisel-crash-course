@@ -57,7 +57,7 @@ class Test extends Module {
   bUnpacked := decodeTestB.io.out
   
   val cPacked = Wire(new PackedPosit(width = width, es = es))
-  cPacked.bits := 0.U
+  cPacked.bits := 64.U
   
   val decodeTestC = Module(new PositDecode(width = width, es = es))
   decodeTestC.io.in := cPacked
@@ -98,7 +98,7 @@ class Test extends Module {
     printf("\n")
 
   
-    printf("now testing decoding for packed 0... \n")
+    printf("now testing decoding for packed 1... \n")
     printf("sign is %b \n", cUnpacked.sign)
     printf("isInf is %b \n", cUnpacked.isInf)
     printf("isZero is %b \n", cUnpacked.isZero)
