@@ -209,8 +209,8 @@ class ShiftRightSticky(OUT_WIDTH: Int = 8, IN_WIDTH: Int = 8, SHIFT_VAL_WIDTH: I
         }
       }
     }
-    val stickyHelper = UInt(1.W)
-    val stickyAndHelper = UInt(1.W)
+    val stickyHelper = Wire(UInt(1.W))
+    val stickyAndHelper = Wire(UInt(1.W))
     if(io.shift(i-1) == 1.U) {
       //TODO orReduce, and andReduce respectively, orR/andR not working for some reason
       stickyHelper := valVector(i-1)(pow(2, i-1).toInt - 1, 0).orR
