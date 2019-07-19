@@ -167,7 +167,7 @@ class ShiftRightSticky(OUT_WIDTH: Int = 8, IN_WIDTH: Int = 8, SHIFT_VAL_WIDTH: I
    
   val valVector = Wire(Vec(NUM_STEPS + 1, UInt(OUT_WIDTH.W)))
   val valVectorOfVecs = Wire(Vec(NUM_STEPS+1, Vec(OUT_WIDTH, Bool())))
-  for (i <- NUM_STEPS-1 to 0 by -1) { //changed to "to 0" and added for loop for vectorOfVecs connecting to padding
+  for (i <- NUM_STEPS to 0 by -1) { //changed to "to 0" and added for loop for vectorOfVecs connecting to padding
     valVector(i) := valVectorOfVecs(i).asUInt
   }
   //valVectorOfVecs(0) := 0.U(2.W).asBools
