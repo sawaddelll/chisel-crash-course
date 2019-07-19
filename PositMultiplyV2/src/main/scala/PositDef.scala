@@ -271,12 +271,16 @@ class CountLeadingZerosTree(L: Int = 8, R: Int = 8) extends Module {
   val rCount = Wire(UInt(PositDef.clog2(R+1).W))
 
   val rCountExtend = Wire(UInt(PositDef.clog2(L+1).W))
+  val rCountExtendVec = Wire(Vec(PositDef.clog2(L+1), Bool()))///another VEC
 
-  rCountExtend(PositDef.clog2(R+1)-1, 0) := rCount
-
+  //rCountExtend(PositDef.clog2(R+1)-1, 0) := rCount
+  rCountExtendVec(PositDef.clog2(R+1)-1, 0) := rCount
+                             
   for (i <- PositDef.clog2(L+1)-1 until PositDef.clog2(R+1)-1 by -1) {
-    rCountExtend(i) := 0.U(1.W)
+    rCountExtendVec(i) := 0.U(1.W)
   }
+                             
+  rCountExtend := rCountExtendVec.asUInt                 
 
   if (L >= 2) {
     val leftCount = Module(new CountLeadingZerosTree (L = L, R = L))
