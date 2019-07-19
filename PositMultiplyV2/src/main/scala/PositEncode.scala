@@ -36,7 +36,7 @@ class PositEncode(width: Int = 8, es: Int = 1) extends Module {
   //TODO: This was made as a separate module to track resource usage, is that necessary?
   esAndFractionShifted := esAndFraction >> shiftBits
 
-  val firstBits = Bits(2.W)
+  val firstBits = Wire(Bits(2.W))
   when(posRegime === 1.U) {
     firstBits := 2.U //TODO: How do you write binary?
   } .otherwise {
@@ -72,17 +72,22 @@ class PositEncode(width: Int = 8, es: Int = 1) extends Module {
     shiftBits :=(~signedRegime(LOCAL_SIGNED_REGIME_BITS-2, 0)).asUInt()
   }
 
+  val outBitsVec = Wire(Vec(width, Bool()))
+  io.out.bits := outBitsVec.asUInt
   when(io.in.isZero) {
     //TODO: TEST Another posit bundle function
     //out.data = out.zeroPacked();
-    io.out.bits := PackedPositFunctions.zeroPackedBits(width)
+    outBitsVec := PackedPositFunctions.zeroPackedBits(width)
   } .elsewhen(io.in.isInf) {
     //TODO: TEST Another posit bundle function
-    io.out.bits := PackedPositFunctions.infPackedBits(width)
+    outBitsVec := PackedPositFunctions.infPackedBits(width)
     //out.data = out.infPacked();
   } .otherwise {
-    io.out.bits(width-1) := io.in.sign
-    io.out.bits(width-2, 0) := esAndFractionShifted
+    outBitsVec(width-1) := io.in.sign
+    for (i <- width-2 to 0 by -1) {
+      outBitsVec(i) := esAndFractionShifted(i)
+    }
+    //io.out.bits(width-2, 0) := esAndFractionShifted
   }
 
 
