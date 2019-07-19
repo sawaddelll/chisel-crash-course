@@ -44,9 +44,9 @@ class PositEncode(width: Int = 8, es: Int = 1) extends Module {
   }
 
   if (es > 0) {
-    esAndFraction := Cat(firstBits, Cat(io.in.exponent(es-1, 0), io.in.fraction))
+    esAndFraction := Cat(firstBits, Cat(io.in.exponent(es-1, 0), io.in.fraction)).asSInt
   } else {
-    esAndFraction := Cat(firstBits, io.in.fraction)
+    esAndFraction := Cat(firstBits, io.in.fraction).asSInt
   }
   //TODO: add functions to Unpacked/Packed Posits to do stuff like below, somehow (just separate modules?)
   //signedRegime = in.signedRegime(in.data)
