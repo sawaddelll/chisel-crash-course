@@ -170,6 +170,7 @@ class ShiftRightSticky(OUT_WIDTH: Int = 8, IN_WIDTH: Int = 8, SHIFT_VAL_WIDTH: I
   for (i <- NUM_STEPS-1 until 0 by -1) {
     valVector(i) := valVectorOfVecs(i).asUInt
   }
+  valVectorOfVecs(0) := 0.U(2.W).asBools
     
   val valSticky = Wire(UInt((NUM_STEPS + 1).W))
   val valStickyVec = Wire(Vec(NUM_STEPS + 1, Bool()))
