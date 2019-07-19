@@ -359,7 +359,10 @@ class CountLeadingZeros(WIDTH: Int = 6, ADD_OFFSET: Int = 0) extends Module {
     inPadVec(i) := 0.U(1.W)
   }
   
-  inPadVec(WIDTH - 1) := io.in
+  //inPadVec(WIDTH - 1, 0) := io.in
+  for(i <- WIDTH - 1 to 0 by -1) {
+    inPadVec(i) := io.in(i)
+  }
   inPad := inPadVec.asUInt
   val tree = Module(new CountLeadingZerosTree(L = L, R = R))
   tree.io.left := inPad(WIDTH+ADD_OFFSET - 1, WIDTH+ADD_OFFSET - 1 - L)
