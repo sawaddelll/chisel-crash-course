@@ -77,10 +77,10 @@ class PositEncode(width: Int = 8, es: Int = 1) extends Module {
   when(io.in.isZero) {
     //TODO: TEST Another posit bundle function
     //out.data = out.zeroPacked();
-    outBitsVec := PackedPositFunctions.zeroPackedBits(width)
+    outBitsVec := PackedPositFunctions.zeroPackedBits(width).toBools
   } .elsewhen(io.in.isInf) {
     //TODO: TEST Another posit bundle function
-    outBitsVec := PackedPositFunctions.infPackedBits(width)
+    outBitsVec := PackedPositFunctions.infPackedBits(width).toBools
     //out.data = out.infPacked();
   } .otherwise {
     outBitsVec(width-1) := io.in.sign
