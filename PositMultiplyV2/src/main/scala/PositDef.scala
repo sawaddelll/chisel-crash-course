@@ -335,13 +335,14 @@ class CountLeadingZeros(WIDTH: Int = 6, ADD_OFFSET: Int = 0) extends Module {
   assert(R > 0)
 
   val inPad = Wire(UInt((WIDTH+ADD_OFFSET).W))
+  val inPadVec = Wire(Vec(WIDTH+ADD_OFFSET, Bool()) //another vector to handle single bit assignment
 
   for(i <- WIDTH+ADD_OFFSET-1 to WIDTH by -1) {
-    inPad(i) := 0.U(1.W)
+    inPadVec(i) := 0.U(1.W)
   }
-
-  inPad(WIDTH - 1) := io.in
-
+  
+  inPadVec(WIDTH - 1) := io.in
+  inPad := inPadVec.asUInt
   val tree = Module(new CountLeadingZerosTree(L = L, R = R))
   tree.io.left := inPad(WIDTH+ADD_OFFSET - 1, WIDTH+ADD_OFFSET - 1 - L)
   tree.io.right := io.in(R-1, 0)
