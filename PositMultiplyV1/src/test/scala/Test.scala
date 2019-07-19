@@ -14,17 +14,17 @@ class DataGen(width: Int = 8,  es: Int = 1) extends Module {
 
   io.a.isZero  := 0.U
   io.a.isInf   := 0.U
-  io.a.sign    := 1.U
+  io.a.sign    := 0.U
 
-  io.b.sign  := 1.U
+  io.b.sign  := 0.U
   io.b.isInf   := 0.U
   io.b.isZero  := 0.U
 
-  io.a.exponent := 5.U(5.W)
-  io.a.fraction := 0.U(4.W)
+  io.a.exponent := 14.U(5.W)
+  io.a.fraction := 4.U(4.W)
 
-  io.b.exponent := 10.U(5.W)
-  io.b.fraction := 5.U(4.W)
+  io.b.exponent := 15.U(5.W)
+  io.b.fraction := 0.U(4.W)
 }
 
 class Test extends Module {
