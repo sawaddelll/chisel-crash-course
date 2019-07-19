@@ -166,8 +166,15 @@ class ShiftRightSticky(OUT_WIDTH: Int = 8, IN_WIDTH: Int = 8, SHIFT_VAL_WIDTH: I
   }
 
   val valVector = Wire(Vec(NUM_STEPS + 1, UInt(OUT_WIDTH.W)))
+    
   val valSticky = Wire(UInt((NUM_STEPS + 1).W))
+  val valStickyVec = Wire(Vec(NUM_STEPS + 1, Bool()))
+  valSticky := valStickyVec.asUInt
+  
   val valStickyAnd = Wire(UInt((NUM_STEPS + 1).W))
+  val valStickyAndVec = Wire(Vec(NUM_STEPS + 1, Bool()))
+  valStickyAnd := valStickyAndVec.asUInt  
+    
   val maxShift = Wire(UInt(1.W))
 
   val padding = Module(new ZeroPadRight(inWidth = IN_WIDTH, outWidth = OUT_WIDTH))
@@ -175,11 +182,11 @@ class ShiftRightSticky(OUT_WIDTH: Int = 8, IN_WIDTH: Int = 8, SHIFT_VAL_WIDTH: I
   valVector(0) := padding.io.out
 
   if (IN_WIDTH <= OUT_WIDTH) {
-    valSticky(0) := 0.U(1.W)
-    valStickyAnd(0) := 1.U(1.W)
+    valStickyVec(0) := 0.U(1.W)
+    valStickyAndVec(0) := 1.U(1.W)
   } else {
-    valSticky(0) := io.in(IN_WIDTH - OUT_WIDTH - 1, 0).orR
-    valStickyAnd(0) := io.in(IN_WIDTH - OUT_WIDTH - 1, 0).andR
+    valStickyVec(0) := io.in(IN_WIDTH - OUT_WIDTH - 1, 0).orR
+    valStickyAndVec(0) := io.in(IN_WIDTH - OUT_WIDTH - 1, 0).andR
   }
 
   for (i <- 1 to NUM_STEPS) {
@@ -208,8 +215,8 @@ class ShiftRightSticky(OUT_WIDTH: Int = 8, IN_WIDTH: Int = 8, SHIFT_VAL_WIDTH: I
       stickyHelper := 0.U
       stickyAndHelper := 1.U
     }
-    valSticky(i) := valSticky(i - 1) | stickyHelper
-    valStickyAnd(i) := valStickyAnd(i-1) & stickyAndHelper
+    valStickyVec(i) := valSticky(i - 1) | stickyHelper
+    valStickyAndVec(i) := valStickyAnd(i-1) & stickyAndHelper
 
   }
 
