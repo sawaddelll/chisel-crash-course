@@ -7,8 +7,8 @@ import example._
 
 class DataGen(width: Int = 8,  es: Int = 1) extends Module {
   val io = IO(new Bundle {
-    val a = Output(new UnpackedPosit(width = 8, es = 1)).asOutput
-    val b = Output(new UnpackedPosit(width = 8, es = 1)).asOutput
+    val a = Output(new UnpackedPosit(width = 8, es = 1))
+    val b = Output(new UnpackedPosit(width = 8, es = 1))
   })
   
 
@@ -29,10 +29,17 @@ class DataGen(width: Int = 8,  es: Int = 1) extends Module {
 
 class Test extends Module {
   val io = IO(new Bundle {})
+  val width : Int = 8
+  val es: Int = 1
   val gen = Module(new DataGen(width = 8, es = 1))
   val multiply = Module(new PositMultiply(width = 8,es = 1, trailing_bits = 2))
   multiply.io.a <> gen.io.a
   multiply.io.b <> gen.io.b
+  
+  val encodeTestA = Module(new PositEncode(width = width, es = es))
+  encodeTestA.io.in := gen.io.a
+  val aPacked = Wire(new PackedPosit(width = width, es = es))
+  aPacked := encodeTestA.io.out
   
   val trailingBits = Wire(UInt(2.W))
   val stickyBit = Wire(UInt(1.W))
@@ -49,6 +56,8 @@ class Test extends Module {
     printf("a.fraction is %b \n", gen.io.a.fraction)
     printf("b.exponent is %b \n", gen.io.b.exponent)
     printf("b.fraction is %b \n", gen.io.b.fraction)
+  
+    printf("aPacked is %b \n", aPacked.bits)
   
     printf("out.sign is %b \n", multiply.io.out.sign)
     printf("out.isZero is %b \n", multiply.io.out.isZero)
