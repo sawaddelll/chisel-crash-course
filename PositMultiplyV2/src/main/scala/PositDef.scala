@@ -136,7 +136,7 @@ class ZeroPadRight(inWidth: Int = 8, outWidth: Int = 8) extends Module {
 
   val DIFF = getPosDifference(outWidth, inWidth)
   if (inWidth > outWidth) {
-    io.out := io.in(inWidth-1, inWidth-1-outWidth)
+    io.out := io.in(inWidth-1, inWidth-1-outWidth+1)
   } else if (inWidth == outWidth) {
     io.out := io.in
   } else {
@@ -369,7 +369,7 @@ class CountLeadingZeros(WIDTH: Int = 6, ADD_OFFSET: Int = 0) extends Module {
   }
   inPad := inPadVec.asUInt
   val tree = Module(new CountLeadingZerosTree(L = L, R = R))
-  tree.io.left := inPad(WIDTH+ADD_OFFSET - 1, WIDTH+ADD_OFFSET - 1 - L)
+  tree.io.left := inPad(WIDTH+ADD_OFFSET - 1, WIDTH+ADD_OFFSET - 1 - L+1)
   tree.io.right := io.in(R-1, 0)
   io.out := tree.io.out
 
