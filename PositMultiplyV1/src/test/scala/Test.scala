@@ -56,6 +56,14 @@ class Test extends Module {
   val bUnpacked = Wire(new UnpackedPosit(width = width, es = es))
   bUnpacked := decodeTestB.io.out
   
+  val cPacked = Wire(new PackedPosit(width = width, es = es))
+  cPacked.bits := 0.U
+  
+  val decodeTestC = Module(new PositDecode(width = width, es = es))
+  decodeTestC.io.in := cPacked
+  val cUnpacked = Wire(new UnpackedPosit(width = width, es = es))
+  cUnpacked := decodeTestC.io.out
+  
   val trailingBits = Wire(UInt(2.W))
   val stickyBit = Wire(UInt(1.W))
   
@@ -87,6 +95,15 @@ class Test extends Module {
     printf("isZero is %b \n", bUnpacked.isZero)
     printf("exponent is %b \n", bUnpacked.exponent)
     printf("fraction is %b \n", bUnpacked.fraction)
+    printf("\n")
+
+  
+    printf("now testing decoding for packed 0... \n")
+    printf("sign is %b \n", cUnpacked.sign)
+    printf("isInf is %b \n", cUnpacked.isInf)
+    printf("isZero is %b \n", cUnpacked.isZero)
+    printf("exponent is %b \n", cUnpacked.exponent)
+    printf("fraction is %b \n", cUnpacked.fraction)
     printf("\n")
     printf("out.sign is %b \n", multiply.io.out.sign)
     printf("out.isZero is %b \n", multiply.io.out.isZero)
