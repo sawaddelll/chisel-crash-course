@@ -34,8 +34,8 @@ class DataGen(width: Int = 8,  es: Int = 1) extends Module {
   decodingB.io.in := bPacked
   io.b := decodingB.io.out
   
-  printf("a before decoding is %b", aPacked.bits)
-  printf("b before decoding is %b", bPacked.bits)
+  printf("a before decoding is %b \n", aPacked.bits)
+  printf("b before decoding is %b \n", bPacked.bits)
 }
 
 class Test extends Module {
@@ -88,9 +88,9 @@ class Test extends Module {
     printf("out.exponent is %b \n", multiply.io.out.exponent)
     printf("out.fraction is %b \n", multiply.io.out.fraction)
     
-    printf("a is %b", aValue.bits)
-    printf("b is %b", bValue.bits)
-    printf("out is %b", outputValue.bits)
+    printf("a is %b \n", aValue.bits)
+    printf("b is %b \n", bValue.bits)
+    printf("out is %b \n", outputValue.bits)
 
   //}
 
