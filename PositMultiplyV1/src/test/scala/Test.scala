@@ -64,11 +64,11 @@ class Test extends Module {
   
     printf("aPacked is %b \n", aPacked.bits)
     printf("now testing decoding for packed a... \n")
-    printf("sign is %b \n", aUnpacked.io.sign)
-    printf("isInf is %b \n", aUnpacked.io.isInf)
-    printf("isZero is %b \n", aUnpacked.io.isZero)
-    printf("exponent is %b \n", aUnpacked.io.exponent)
-    printf("fraction is %b \n", aUnpacked.io.fraction)
+    printf("sign is %b \n", aUnpacked.sign)
+    printf("isInf is %b \n", aUnpacked.isInf)
+    printf("isZero is %b \n", aUnpacked.isZero)
+    printf("exponent is %b \n", aUnpacked.exponent)
+    printf("fraction is %b \n", aUnpacked.fraction)
   
     printf("out.sign is %b \n", multiply.io.out.sign)
     printf("out.isZero is %b \n", multiply.io.out.isZero)
