@@ -93,3 +93,6 @@ class Test extends Module {
 
 }
 
+object Elaborate extends App {
+  chisel3.Driver.execute(args, () => new Test)
+}
