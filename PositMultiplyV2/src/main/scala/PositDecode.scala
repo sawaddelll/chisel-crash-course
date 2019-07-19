@@ -25,7 +25,7 @@ class PositDecode(width: Int = 8, es: Int = 1) extends Module{
   // neighboring bits in the input, to determine where the 0 -> 1 or 1 -> 0
   // transition occurs, and thus the regime
   val remainderXor = Wire(UInt((LOCAL_MAX_REGIME_FIELD_SIZE-1).W))
-  val remainderXorVec = Wire(Vec(LOCAL_MAX_REGIME_FIELD_SIZE-1, Bool))
+  val remainderXorVec = Wire(Vec(LOCAL_MAX_REGIME_FIELD_SIZE-1, Bool()))
 
   // The count of leading zeros of the above
   val cl0 = Wire(UInt(PositDef.clog2(LOCAL_MAX_REGIME_FIELD_SIZE).W))
