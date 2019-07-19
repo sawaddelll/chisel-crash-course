@@ -80,7 +80,7 @@ class Test extends Module {
     printf("exponent is %b \n", aUnpacked.exponent)
     printf("fraction is %b \n", aUnpacked.fraction)
     printf("\n")
-    printf("aPacked is %b \n", aPacked.bits)
+    printf("bPacked is %b \n", bPacked.bits)
     printf("now testing decoding for packed b... \n")
     printf("sign is %b \n", bUnpacked.sign)
     printf("isInf is %b \n", bUnpacked.isInf)
