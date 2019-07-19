@@ -31,8 +31,8 @@ class DataGen(width: Int = 8,  es: Int = 1) extends Module {
   io.a := decoding.io.out
 
   val decodingB = Module(new PositDecode(width = width, es = es))
-  decoding.io.in := bPacked
-  io.b := decoding.io.out
+  decodingB.io.in := bPacked
+  io.b := decodingB.io.out
 }
 
 class Test extends Module {
