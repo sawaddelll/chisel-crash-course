@@ -19,12 +19,12 @@ class DataGen(width: Int = 8,  es: Int = 1) extends Module {
   val aPacked = Wire(new PackedPosit(width = width, es = es))
   val aBits = Bits("b01100010")
   //aBits := 01100010.Bits
-  aPacked.bits := aBits
+  aPacked.bits := 98.U(8.W)//aBits
 
   val bPacked = Wire(new PackedPosit(width = width, es = es))
   val bBits = Bits("b01101000")
   //aBits := 01100010.Bits
-  bPacked.bits := bBits
+  bPacked.bits := 104.U(8.W)//bBits
   
   val decoding = Module(new PositDecode(width = width, es = es))
   decoding.io.in := aPacked
