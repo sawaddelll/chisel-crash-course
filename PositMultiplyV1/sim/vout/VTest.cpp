@@ -69,18 +69,18 @@ VL_INLINE_OPT void VTest::_sequent__TOP__1(VTest__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    VTest::_sequent__TOP__1\n"); );
     VTest* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
-    // ALWAYS at /home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/sim/vout/Test.v:84
+    // ALWAYS at /home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/sim/vout/Test.v:177
     if (VL_UNLIKELY((1U & (~ (IData)(vlTOPp->reset))))) {
-	VL_FWRITEF(0x80000002U,"a.exponent is 00101 \n");
+	VL_FWRITEF(0x80000002U,"a.exponent is 01110 \n");
     }
     if (VL_UNLIKELY((1U & (~ (IData)(vlTOPp->reset))))) {
-	VL_FWRITEF(0x80000002U,"a.fraction is 0000 \n");
+	VL_FWRITEF(0x80000002U,"a.fraction is 0100 \n");
     }
     if (VL_UNLIKELY((1U & (~ (IData)(vlTOPp->reset))))) {
-	VL_FWRITEF(0x80000002U,"b.exponent is 01010 \n");
+	VL_FWRITEF(0x80000002U,"b.exponent is 01111 \n");
     }
     if (VL_UNLIKELY((1U & (~ (IData)(vlTOPp->reset))))) {
-	VL_FWRITEF(0x80000002U,"b.fraction is 0101 \n");
+	VL_FWRITEF(0x80000002U,"b.fraction is 0000 \n");
     }
     if (VL_UNLIKELY((1U & (~ (IData)(vlTOPp->reset))))) {
 	VL_FWRITEF(0x80000002U,"out.sign is 0 \n");
@@ -98,10 +98,10 @@ VL_INLINE_OPT void VTest::_sequent__TOP__1(VTest__Syms* __restrict vlSymsp) {
 	VL_FWRITEF(0x80000002U,"out.stickyBit is 0 \n");
     }
     if (VL_UNLIKELY((1U & (~ (IData)(vlTOPp->reset))))) {
-	VL_FWRITEF(0x80000002U,"out.exponent is 00011 \n");
+	VL_FWRITEF(0x80000002U,"out.exponent is 10001 \n");
     }
     if (VL_UNLIKELY((1U & (~ (IData)(vlTOPp->reset))))) {
-	VL_FWRITEF(0x80000002U,"out.fraction is 1010 \n");
+	VL_FWRITEF(0x80000002U,"out.fraction is 1000 \n");
     }
 }
 
