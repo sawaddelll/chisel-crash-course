@@ -33,6 +33,9 @@ class DataGen(width: Int = 8,  es: Int = 1) extends Module {
   val decodingB = Module(new PositDecode(width = width, es = es))
   decodingB.io.in := bPacked
   io.b := decodingB.io.out
+  
+  printf("a before decoding is %b", aPacked.bits)
+  printf("b before decoding is %b", bPacked.bits)
 }
 
 class Test extends Module {
