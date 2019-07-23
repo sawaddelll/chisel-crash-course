@@ -73,6 +73,14 @@ class Test extends Module {
   val output = Wire(new UnpackedPosit(8, 1))
 
   output <> multiply.io.out
+  
+  
+  val countingZeros = Module(new CountLeadingZeros(WIDTH = width - 1, ADD_OFFSET = 0))
+  val countTest = Wire(UInt((width-1).W))
+  countTest := 1.U((width-1).W)
+  countingZeros.io.in := countTest
+  val countOutput = Wire(UInt(width.W))
+  countOutput := countingZeros.io.out
 
 //  while(true) {
     printf("a.exponent is %b \n",gen.io.a.exponent)
@@ -105,16 +113,19 @@ class Test extends Module {
     printf("exponent is %b \n", cUnpacked.exponent)
     printf("fraction is %b \n", cUnpacked.fraction)
     printf("\n")
+    printf("counting leading zeros of %b \n", countTest)
+    printf("output is %d \n", countOutput)
+    printf("\n")
+  
     printf("out.sign is %b \n", multiply.io.out.sign)
     printf("out.isZero is %b \n", multiply.io.out.isZero)
     printf("out.isInf is %b \n", multiply.io.out.isInf)
-
     printf("out.trailingBits is %b \n", trailingBits)
     printf("out.stickyBit is %b \n", stickyBit)
 
     printf("out.exponent is %b \n", multiply.io.out.exponent)
     printf("out.fraction is %b \n", multiply.io.out.fraction)
-
+      
  // }
 
 }
