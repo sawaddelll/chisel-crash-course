@@ -75,9 +75,9 @@ class Test extends Module {
   output <> multiply.io.out
   
   
-  val countingZeros = Module(new CountLeadingZeros(WIDTH = width - 1, ADD_OFFSET = 0))
-  val countTest = Wire(UInt((width-1).W))
-  countTest := 1.U((width-1).W)
+  val countingZeros = Module(new CountLeadingZeros(WIDTH = width - 2, ADD_OFFSET = 0))
+  val countTest = Wire(UInt((width-2).W))
+  countTest := 1.U((width-2).W)
   countingZeros.io.in := countTest
   val countOutput = Wire(UInt(width.W))
   countOutput := countingZeros.io.out
