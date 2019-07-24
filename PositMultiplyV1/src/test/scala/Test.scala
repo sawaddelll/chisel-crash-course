@@ -77,7 +77,7 @@ class Test extends Module {
   
   val countingZeros = Module(new CountLeadingZeros(WIDTH = width - 2, ADD_OFFSET = 0))
   val countTest = Wire(UInt((width-2).W))
-  countTest := 15.U((width-2).W)
+  countTest := 7.U((width-2).W)
   countingZeros.io.in := countTest
   val countOutput = Wire(UInt(width.W))
   countOutput := countingZeros.io.out
