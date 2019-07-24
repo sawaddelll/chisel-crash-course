@@ -82,7 +82,7 @@ class Test extends Module {
   val countOutput = Wire(UInt(width.W))
   countOutput := countingZeros.io.out
 
-//  while(true) {
+for(i <- 0 to 100) {//  while(true) {
     printf("a.exponent is %b \n",gen.io.a.exponent)
     printf("a.fraction is %b \n", gen.io.a.fraction)
     printf("b.exponent is %b \n", gen.io.b.exponent)
@@ -126,7 +126,7 @@ class Test extends Module {
     printf("out.exponent is %b \n", multiply.io.out.exponent)
     printf("out.fraction is %b \n", multiply.io.out.fraction)
       
- // }
+}// }
 
 }
 
