@@ -328,6 +328,8 @@ class CountLeadingZerosTree(L: Int = 8, R: Int = 8) extends Module {
     }
     // $display("%d %d: left %b right %b lcount %b rcount %b rcountext %b out %b",
     //          L, R, left, right, lCount, rCount, rCountExtend, out);
+    printf("%d %d: left %b right %b lcount %b rcount %b rcountext %b out %b \n",
+              L.asUInt, R.asUInt, io.left, io.right, lCount, rCount, rCountExtend, io.out)
 
   } else {
     when(lCount(PositDef.clog2(L+1)-1) && rCountExtend(PositDef.clog2(L+1)-1)) {
