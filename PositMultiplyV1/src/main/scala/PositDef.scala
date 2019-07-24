@@ -268,7 +268,7 @@ class CountLeadingZerosTree(L: Int = 8, R: Int = 8) extends Module {
     val out = Output(UInt(PositDef.clog2(L+R+1).W))
   })
   // L is always a power of 2; R might not be
-  val L2: Int = L / 2 // L/2 or >>?
+  val L2: Int = L >> 2 // L/2 or >>?
 
   // The new L for the right-hand recursion should be a power of 2 as
   // well
