@@ -338,7 +338,7 @@ class CountLeadingZerosTree(L: Int = 8, R: Int = 8) extends Module {
       io.out := 1.U(2.W)
     }
      printf("%d %d: left %b right %b lcount %b rcount %b rcountext %b out %b",
-              L, R, io.left, io.right, lCount, rCount, rCountExtend, io.out);
+              L.asUInt, R.asUInt, io.left, io.right, lCount, rCount, rCountExtend, io.out);
   }
 
 }
