@@ -310,10 +310,10 @@ class CountLeadingZerosTree(L: Int = 8, R: Int = 8) extends Module {
   }
 
   if (R >= 2) {
-    val leftCount = Module(new CountLeadingZerosTree (L = R2A, R = R2B))
-    leftCount.io.left := io.left(R-1, R-1-R2A+1)
-    leftCount.io.right := io.left(R2B-1, 0)
-    rCount := leftCount.io.out
+    val rightCount = Module(new CountLeadingZerosTree (L = R2A, R = R2B))
+    rightCount.io.left := io.left(R-1, R-1-R2A+1)
+    rightCount.io.right := io.left(R2B-1, 0)
+    rCount := rightCount.io.out
   } else {
     rCount := ~io.right(0)
   }
