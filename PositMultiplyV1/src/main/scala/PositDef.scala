@@ -302,7 +302,7 @@ class CountLeadingZerosTree(L: Int = 8, R: Int = 8) extends Module {
 
   if (L >= 2) {
     val leftCount = Module(new CountLeadingZerosTree (L = L2, R = L2))
-    leftCount.io.left := io.left(L-1, L-1-L2)
+    leftCount.io.left := io.left(L-1, L-1-L2+1)
     leftCount.io.right := io.left(L2-1, 0)
     lCount := leftCount.io.out
   } else {
@@ -311,7 +311,7 @@ class CountLeadingZerosTree(L: Int = 8, R: Int = 8) extends Module {
 
   if (R >= 2) {
     val leftCount = Module(new CountLeadingZerosTree (L = R2A, R = R2B))
-    leftCount.io.left := io.left(R-1, R-1-R2A)
+    leftCount.io.left := io.left(R-1, R-1-R2A+1)
     leftCount.io.right := io.left(R2B-1, 0)
     rCount := leftCount.io.out
   } else {
@@ -369,7 +369,7 @@ class CountLeadingZeros(WIDTH: Int = 6, ADD_OFFSET: Int = 0) extends Module {
   }
   inPad := inPadVec.asUInt
   val tree = Module(new CountLeadingZerosTree(L = L, R = R))
-  tree.io.left := inPad(WIDTH+ADD_OFFSET - 1, WIDTH+ADD_OFFSET - 1 - L)
+  tree.io.left := inPad(WIDTH+ADD_OFFSET - 1, WIDTH+ADD_OFFSET - 1 - L + 1)
   tree.io.right := io.in(R-1, 0)
   io.out := tree.io.out
 
