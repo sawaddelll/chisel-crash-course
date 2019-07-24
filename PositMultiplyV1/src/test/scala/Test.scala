@@ -81,7 +81,9 @@ class Test extends Module {
   countingZeros.io.in := countTest
   val countOutput = Wire(UInt(width.W))
   countOutput := countingZeros.io.out
-
+  val (cycles, _) = Counter(true.B, 256)
+    
+  when(cycles === 256.U) {
 //for(i <- 0 to 10000) {//  while(true) {
     printf("a.exponent is %b \n",gen.io.a.exponent)
     printf("a.fraction is %b \n", gen.io.a.fraction)
@@ -126,7 +128,7 @@ class Test extends Module {
     printf("out.exponent is %b \n", multiply.io.out.exponent)
     printf("out.fraction is %b \n", multiply.io.out.fraction)
       
-//}// }
+  }//}// }
 
 }
 
