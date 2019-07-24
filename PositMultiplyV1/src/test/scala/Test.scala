@@ -83,7 +83,7 @@ class Test extends Module {
   countOutput := countingZeros.io.out
   val (cycles, _) = Counter(true.B, 256)
     
-  when(cycles === 256.U) {
+  when(cycles === 56.U) {
 //for(i <- 0 to 10000) {//  while(true) {
     printf("a.exponent is %b \n",gen.io.a.exponent)
     printf("a.fraction is %b \n", gen.io.a.fraction)
