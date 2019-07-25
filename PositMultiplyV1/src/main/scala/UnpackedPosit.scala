@@ -29,7 +29,7 @@ object UnpackedPositFunctions {
   }
   
   def unsignedRegime(unpackedPosit: UnpackedPosit, width: Int, es: Int): UInt = {
-    val answer = UInt(PositDef.getUnsignedRegimeBits(width).W)
+    val answer = Wire(UInt(PositDef.getUnsignedRegimeBits(width).W))
     answer := unpackedPosit.exponent(PositDef.getUnsignedExponentBits(width, es)-1, 0)
     return answer
   }
