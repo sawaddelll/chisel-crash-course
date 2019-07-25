@@ -144,6 +144,6 @@ class PositDecode(width: Int = 8, es: Int = 1) extends Module{
     io.out.exponent := unsignedRegime//(LOCAL_UNSIGNED_EXPONENT_BITS.W) //trying to change width
   }
   
-  printf("unsignedRegime is %b", unsignedRegime)
+  //printf("unsignedRegime is %b", unsignedRegime)
 
 }
