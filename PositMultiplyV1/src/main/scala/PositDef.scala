@@ -230,9 +230,11 @@ class ShiftRightSticky(OUT_WIDTH: Int = 8, IN_WIDTH: Int = 8, SHIFT_VAL_WIDTH: I
 
 
   if (SHIFT_MAX < OUT_WIDTH) {
+    maxShift := 0.U
     io.out := valVector(NUM_STEPS)
     io.sticky := valSticky(NUM_STEPS)
     io.stickyAnd := valStickyAnd(NUM_STEPS)
+    
   } else if (SHIFT_MAX == OUT_WIDTH) {
     maxShift := (io.shift === OUT_WIDTH.U)
     if (maxShift == 1.U) { //out
