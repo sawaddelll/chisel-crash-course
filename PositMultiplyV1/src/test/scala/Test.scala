@@ -23,8 +23,8 @@ class DataGen(width: Int = 8,  es: Int = 1) extends Module {
   io.a.exponent := 14.U(5.W)
   io.a.fraction := 4.U(4.W)
 
-  io.b.exponent := 15.U(5.W)
-  io.b.fraction := 0.U(4.W)
+  io.b.exponent := 14.U(5.W)
+  io.b.fraction := 8.U(4.W)
 }
 
 class Test extends Module {
