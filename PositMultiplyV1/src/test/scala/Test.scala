@@ -77,7 +77,7 @@ class Test extends Module {
   
   val countingZeros = Module(new CountLeadingZeros(WIDTH = width - 2, ADD_OFFSET = 0))
   val countTest = Wire(UInt((width-2).W))
-  countTest := 4.U((width-2).W)
+  countTest := 15.U((width-2).W)
   countingZeros.io.in := countTest
   val countOutput = Wire(UInt(width.W))
   countOutput := countingZeros.io.out
@@ -92,7 +92,11 @@ class Test extends Module {
   trailingBits2 := endToEndTest.io.trailingBits
   stickyBit2 := endToEndTest.io.stickyBit
 
-
+  val encodeTestOut = Module(new PositEncode(width = width, es = es))
+  encodeTestOut.io.in := multiply.io.out
+  val outPacked = Wire(new PackedPosit(width = width, es = es))
+  outPacked := encodeTestOut.io.out
+  
   when(cycles === 56.U) {
 //for(i <- 0 to 10000) {//  while(true) {
     printf("a.exponent is %b \n",gen.io.a.exponent)
@@ -125,14 +129,6 @@ class Test extends Module {
     printf("exponent is %b \n", cUnpacked.exponent)
     printf("fraction is %b \n", cUnpacked.fraction)
     */
-    printf("now testing packed to packed multiplication (end to end) \n")
-    printf("results: \n")
-    printf("%b is the packed output \n", cPacked.bits)
-    printf("sign is %b \n", cUnpacked.sign)
-    printf("isInf is %b \n", cUnpacked.isInf)
-    printf("isZero is %b \n", cUnpacked.isZero)
-    printf("exponent is %b \n", cUnpacked.exponent)
-    printf("fraction is %b \n", cUnpacked.fraction)
     printf("\n")
     printf("counting leading zeros of %b \n", countTest)
     printf("output is %d \n", countOutput)
@@ -146,7 +142,18 @@ class Test extends Module {
 
     printf("out.exponent is %b \n", multiply.io.out.exponent)
     printf("out.fraction is %b \n", multiply.io.out.fraction)
-      
+    printf("outPacked is %b", outPacked.bits)
+    printf("\n \n")
+    printf("now testing packed to packed multiplication (end to end) \n")
+    printf("results: \n")
+    printf("%b is the packed output \n", cPacked.bits)
+    printf("sign is %b \n", cUnpacked.sign)
+    printf("isInf is %b \n", cUnpacked.isInf)
+    printf("isZero is %b \n", cUnpacked.isZero)
+    printf("exponent is %b \n", cUnpacked.exponent)
+    printf("fraction is %b \n", cUnpacked.fraction)
+    printf("\n")
+
   }//}// }
 
 }

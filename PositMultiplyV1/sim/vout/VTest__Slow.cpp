@@ -46,7 +46,7 @@ void VTest::_initial__TOP__3(VTest__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    VTest::_initial__TOP__3\n"); );
     VTest* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
-    // INITIAL at /home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/sim/vout/Test.v:834
+    // INITIAL at /home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/sim/vout/Test.v:855
     vlTOPp->Test__DOT___RAND_0 = VL_RANDOM_I(32);
     vlTOPp->Test__DOT__value = (0xffU & vlTOPp->Test__DOT___RAND_0);
 }

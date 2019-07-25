@@ -612,90 +612,97 @@ module PositMultiplyPackedToPacked( // @[:@2785.2]
   assign encode_io_in_exponent = multiply_io_out_exponent; // @[PositMultiplyPackedToPacked.scala 46:16:@2835.4]
   assign encode_io_in_fraction = multiply_io_out_fraction; // @[PositMultiplyPackedToPacked.scala 46:16:@2834.4]
 endmodule
-module Test( // @[:@2841.2]
-  input   clock, // @[:@2842.4]
-  input   reset // @[:@2843.4]
+module Test( // @[:@2943.2]
+  input   clock, // @[:@2944.4]
+  input   reset // @[:@2945.4]
 );
-  wire  multiply_io_a_isZero; // @[Test.scala 35:24:@2849.4]
-  wire  multiply_io_a_isInf; // @[Test.scala 35:24:@2849.4]
-  wire  multiply_io_a_sign; // @[Test.scala 35:24:@2849.4]
-  wire [4:0] multiply_io_a_exponent; // @[Test.scala 35:24:@2849.4]
-  wire [3:0] multiply_io_a_fraction; // @[Test.scala 35:24:@2849.4]
-  wire  multiply_io_b_isZero; // @[Test.scala 35:24:@2849.4]
-  wire  multiply_io_b_isInf; // @[Test.scala 35:24:@2849.4]
-  wire  multiply_io_b_sign; // @[Test.scala 35:24:@2849.4]
-  wire [4:0] multiply_io_b_exponent; // @[Test.scala 35:24:@2849.4]
-  wire [3:0] multiply_io_b_fraction; // @[Test.scala 35:24:@2849.4]
-  wire  multiply_io_out_isZero; // @[Test.scala 35:24:@2849.4]
-  wire  multiply_io_out_isInf; // @[Test.scala 35:24:@2849.4]
-  wire  multiply_io_out_sign; // @[Test.scala 35:24:@2849.4]
-  wire [4:0] multiply_io_out_exponent; // @[Test.scala 35:24:@2849.4]
-  wire [3:0] multiply_io_out_fraction; // @[Test.scala 35:24:@2849.4]
-  wire [1:0] multiply_io_trailingBits; // @[Test.scala 35:24:@2849.4]
-  wire  multiply_io_stickyBit; // @[Test.scala 35:24:@2849.4]
-  wire  encodeTestA_io_in_isZero; // @[Test.scala 39:27:@2862.4]
-  wire  encodeTestA_io_in_isInf; // @[Test.scala 39:27:@2862.4]
-  wire  encodeTestA_io_in_sign; // @[Test.scala 39:27:@2862.4]
-  wire [4:0] encodeTestA_io_in_exponent; // @[Test.scala 39:27:@2862.4]
-  wire [3:0] encodeTestA_io_in_fraction; // @[Test.scala 39:27:@2862.4]
-  wire [7:0] encodeTestA_io_out_bits; // @[Test.scala 39:27:@2862.4]
-  wire [7:0] decodeTestA_io_in_bits; // @[Test.scala 44:27:@2872.4]
-  wire  decodeTestA_io_out_isZero; // @[Test.scala 44:27:@2872.4]
-  wire  decodeTestA_io_out_isInf; // @[Test.scala 44:27:@2872.4]
-  wire  decodeTestA_io_out_sign; // @[Test.scala 44:27:@2872.4]
-  wire [4:0] decodeTestA_io_out_exponent; // @[Test.scala 44:27:@2872.4]
-  wire [3:0] decodeTestA_io_out_fraction; // @[Test.scala 44:27:@2872.4]
-  wire  encodeTestB_io_in_isZero; // @[Test.scala 49:27:@2882.4]
-  wire  encodeTestB_io_in_isInf; // @[Test.scala 49:27:@2882.4]
-  wire  encodeTestB_io_in_sign; // @[Test.scala 49:27:@2882.4]
-  wire [4:0] encodeTestB_io_in_exponent; // @[Test.scala 49:27:@2882.4]
-  wire [3:0] encodeTestB_io_in_fraction; // @[Test.scala 49:27:@2882.4]
-  wire [7:0] encodeTestB_io_out_bits; // @[Test.scala 49:27:@2882.4]
-  wire [7:0] decodeTestB_io_in_bits; // @[Test.scala 54:27:@2892.4]
-  wire  decodeTestB_io_out_isZero; // @[Test.scala 54:27:@2892.4]
-  wire  decodeTestB_io_out_isInf; // @[Test.scala 54:27:@2892.4]
-  wire  decodeTestB_io_out_sign; // @[Test.scala 54:27:@2892.4]
-  wire [4:0] decodeTestB_io_out_exponent; // @[Test.scala 54:27:@2892.4]
-  wire [3:0] decodeTestB_io_out_fraction; // @[Test.scala 54:27:@2892.4]
-  wire [7:0] decodeTestC_io_in_bits; // @[Test.scala 62:27:@2903.4]
-  wire  decodeTestC_io_out_isZero; // @[Test.scala 62:27:@2903.4]
-  wire  decodeTestC_io_out_isInf; // @[Test.scala 62:27:@2903.4]
-  wire  decodeTestC_io_out_sign; // @[Test.scala 62:27:@2903.4]
-  wire [4:0] decodeTestC_io_out_exponent; // @[Test.scala 62:27:@2903.4]
-  wire [3:0] decodeTestC_io_out_fraction; // @[Test.scala 62:27:@2903.4]
-  wire [5:0] countingZeros_io_in; // @[Test.scala 78:29:@2923.4]
-  wire [2:0] countingZeros_io_out; // @[Test.scala 78:29:@2923.4]
-  wire [7:0] endToEndTest_io_a_bits; // @[Test.scala 88:28:@2941.4]
-  wire [7:0] endToEndTest_io_b_bits; // @[Test.scala 88:28:@2941.4]
-  wire [7:0] endToEndTest_io_out_bits; // @[Test.scala 88:28:@2941.4]
-  reg [7:0] value; // @[Counter.scala 26:33:@2931.4]
+  wire  multiply_io_a_isZero; // @[Test.scala 35:24:@2951.4]
+  wire  multiply_io_a_isInf; // @[Test.scala 35:24:@2951.4]
+  wire  multiply_io_a_sign; // @[Test.scala 35:24:@2951.4]
+  wire [4:0] multiply_io_a_exponent; // @[Test.scala 35:24:@2951.4]
+  wire [3:0] multiply_io_a_fraction; // @[Test.scala 35:24:@2951.4]
+  wire  multiply_io_b_isZero; // @[Test.scala 35:24:@2951.4]
+  wire  multiply_io_b_isInf; // @[Test.scala 35:24:@2951.4]
+  wire  multiply_io_b_sign; // @[Test.scala 35:24:@2951.4]
+  wire [4:0] multiply_io_b_exponent; // @[Test.scala 35:24:@2951.4]
+  wire [3:0] multiply_io_b_fraction; // @[Test.scala 35:24:@2951.4]
+  wire  multiply_io_out_isZero; // @[Test.scala 35:24:@2951.4]
+  wire  multiply_io_out_isInf; // @[Test.scala 35:24:@2951.4]
+  wire  multiply_io_out_sign; // @[Test.scala 35:24:@2951.4]
+  wire [4:0] multiply_io_out_exponent; // @[Test.scala 35:24:@2951.4]
+  wire [3:0] multiply_io_out_fraction; // @[Test.scala 35:24:@2951.4]
+  wire [1:0] multiply_io_trailingBits; // @[Test.scala 35:24:@2951.4]
+  wire  multiply_io_stickyBit; // @[Test.scala 35:24:@2951.4]
+  wire  encodeTestA_io_in_isZero; // @[Test.scala 39:27:@2964.4]
+  wire  encodeTestA_io_in_isInf; // @[Test.scala 39:27:@2964.4]
+  wire  encodeTestA_io_in_sign; // @[Test.scala 39:27:@2964.4]
+  wire [4:0] encodeTestA_io_in_exponent; // @[Test.scala 39:27:@2964.4]
+  wire [3:0] encodeTestA_io_in_fraction; // @[Test.scala 39:27:@2964.4]
+  wire [7:0] encodeTestA_io_out_bits; // @[Test.scala 39:27:@2964.4]
+  wire [7:0] decodeTestA_io_in_bits; // @[Test.scala 44:27:@2974.4]
+  wire  decodeTestA_io_out_isZero; // @[Test.scala 44:27:@2974.4]
+  wire  decodeTestA_io_out_isInf; // @[Test.scala 44:27:@2974.4]
+  wire  decodeTestA_io_out_sign; // @[Test.scala 44:27:@2974.4]
+  wire [4:0] decodeTestA_io_out_exponent; // @[Test.scala 44:27:@2974.4]
+  wire [3:0] decodeTestA_io_out_fraction; // @[Test.scala 44:27:@2974.4]
+  wire  encodeTestB_io_in_isZero; // @[Test.scala 49:27:@2984.4]
+  wire  encodeTestB_io_in_isInf; // @[Test.scala 49:27:@2984.4]
+  wire  encodeTestB_io_in_sign; // @[Test.scala 49:27:@2984.4]
+  wire [4:0] encodeTestB_io_in_exponent; // @[Test.scala 49:27:@2984.4]
+  wire [3:0] encodeTestB_io_in_fraction; // @[Test.scala 49:27:@2984.4]
+  wire [7:0] encodeTestB_io_out_bits; // @[Test.scala 49:27:@2984.4]
+  wire [7:0] decodeTestB_io_in_bits; // @[Test.scala 54:27:@2994.4]
+  wire  decodeTestB_io_out_isZero; // @[Test.scala 54:27:@2994.4]
+  wire  decodeTestB_io_out_isInf; // @[Test.scala 54:27:@2994.4]
+  wire  decodeTestB_io_out_sign; // @[Test.scala 54:27:@2994.4]
+  wire [4:0] decodeTestB_io_out_exponent; // @[Test.scala 54:27:@2994.4]
+  wire [3:0] decodeTestB_io_out_fraction; // @[Test.scala 54:27:@2994.4]
+  wire [7:0] decodeTestC_io_in_bits; // @[Test.scala 62:27:@3005.4]
+  wire  decodeTestC_io_out_isZero; // @[Test.scala 62:27:@3005.4]
+  wire  decodeTestC_io_out_isInf; // @[Test.scala 62:27:@3005.4]
+  wire  decodeTestC_io_out_sign; // @[Test.scala 62:27:@3005.4]
+  wire [4:0] decodeTestC_io_out_exponent; // @[Test.scala 62:27:@3005.4]
+  wire [3:0] decodeTestC_io_out_fraction; // @[Test.scala 62:27:@3005.4]
+  wire [5:0] countingZeros_io_in; // @[Test.scala 78:29:@3025.4]
+  wire [2:0] countingZeros_io_out; // @[Test.scala 78:29:@3025.4]
+  wire [7:0] endToEndTest_io_a_bits; // @[Test.scala 88:28:@3043.4]
+  wire [7:0] endToEndTest_io_b_bits; // @[Test.scala 88:28:@3043.4]
+  wire [7:0] endToEndTest_io_out_bits; // @[Test.scala 88:28:@3043.4]
+  wire  encodeTestOut_io_in_isZero; // @[Test.scala 95:29:@3051.4]
+  wire  encodeTestOut_io_in_isInf; // @[Test.scala 95:29:@3051.4]
+  wire  encodeTestOut_io_in_sign; // @[Test.scala 95:29:@3051.4]
+  wire [4:0] encodeTestOut_io_in_exponent; // @[Test.scala 95:29:@3051.4]
+  wire [3:0] encodeTestOut_io_in_fraction; // @[Test.scala 95:29:@3051.4]
+  wire [7:0] encodeTestOut_io_out_bits; // @[Test.scala 95:29:@3051.4]
+  reg [7:0] value; // @[Counter.scala 26:33:@3033.4]
   reg [31:0] _RAND_0;
-  wire [8:0] _T_23; // @[Counter.scala 35:22:@2934.6]
-  wire [7:0] _T_24; // @[Counter.scala 35:22:@2935.6]
-  wire  _T_29; // @[Test.scala 96:15:@2949.4]
-  wire  _T_32; // @[Test.scala 98:11:@2952.6]
-  wire [7:0] aPacked_bits; // @[Test.scala 41:21:@2870.4 Test.scala 42:11:@2871.4]
-  wire  aUnpacked_isZero; // @[Test.scala 46:23:@2876.4 Test.scala 47:13:@2881.4]
-  wire  aUnpacked_isInf; // @[Test.scala 46:23:@2876.4 Test.scala 47:13:@2880.4]
-  wire  aUnpacked_sign; // @[Test.scala 46:23:@2876.4 Test.scala 47:13:@2879.4]
-  wire [4:0] aUnpacked_exponent; // @[Test.scala 46:23:@2876.4 Test.scala 47:13:@2878.4]
-  wire [3:0] aUnpacked_fraction; // @[Test.scala 46:23:@2876.4 Test.scala 47:13:@2877.4]
-  wire [7:0] bPacked_bits; // @[Test.scala 51:21:@2890.4 Test.scala 52:11:@2891.4]
-  wire  bUnpacked_isZero; // @[Test.scala 56:23:@2896.4 Test.scala 57:13:@2901.4]
-  wire  bUnpacked_isInf; // @[Test.scala 56:23:@2896.4 Test.scala 57:13:@2900.4]
-  wire  bUnpacked_sign; // @[Test.scala 56:23:@2896.4 Test.scala 57:13:@2899.4]
-  wire [4:0] bUnpacked_exponent; // @[Test.scala 56:23:@2896.4 Test.scala 57:13:@2898.4]
-  wire [3:0] bUnpacked_fraction; // @[Test.scala 56:23:@2896.4 Test.scala 57:13:@2897.4]
-  wire [7:0] cPacked_bits; // @[Test.scala 59:21:@2902.4 Test.scala 91:11:@2946.4]
-  wire  cUnpacked_isZero; // @[Test.scala 64:23:@2907.4 Test.scala 65:13:@2912.4]
-  wire  cUnpacked_isInf; // @[Test.scala 64:23:@2907.4 Test.scala 65:13:@2911.4]
-  wire  cUnpacked_sign; // @[Test.scala 64:23:@2907.4 Test.scala 65:13:@2910.4]
-  wire [4:0] cUnpacked_exponent; // @[Test.scala 64:23:@2907.4 Test.scala 65:13:@2909.4]
-  wire [3:0] cUnpacked_fraction; // @[Test.scala 64:23:@2907.4 Test.scala 65:13:@2908.4]
-  wire [1:0] trailingBits; // @[Test.scala 67:26:@2913.4 Test.scala 70:16:@2915.4]
-  wire  stickyBit; // @[Test.scala 68:23:@2914.4 Test.scala 71:13:@2916.4]
-  wire [7:0] countOutput; // @[Test.scala 82:25:@2929.4 Test.scala 83:15:@2930.4]
-  PositMultiply multiply ( // @[Test.scala 35:24:@2849.4]
+  wire [8:0] _T_23; // @[Counter.scala 35:22:@3036.6]
+  wire [7:0] _T_24; // @[Counter.scala 35:22:@3037.6]
+  wire  _T_30; // @[Test.scala 100:15:@3061.4]
+  wire  _T_33; // @[Test.scala 102:11:@3064.6]
+  wire [7:0] aPacked_bits; // @[Test.scala 41:21:@2972.4 Test.scala 42:11:@2973.4]
+  wire  aUnpacked_isZero; // @[Test.scala 46:23:@2978.4 Test.scala 47:13:@2983.4]
+  wire  aUnpacked_isInf; // @[Test.scala 46:23:@2978.4 Test.scala 47:13:@2982.4]
+  wire  aUnpacked_sign; // @[Test.scala 46:23:@2978.4 Test.scala 47:13:@2981.4]
+  wire [4:0] aUnpacked_exponent; // @[Test.scala 46:23:@2978.4 Test.scala 47:13:@2980.4]
+  wire [3:0] aUnpacked_fraction; // @[Test.scala 46:23:@2978.4 Test.scala 47:13:@2979.4]
+  wire [7:0] bPacked_bits; // @[Test.scala 51:21:@2992.4 Test.scala 52:11:@2993.4]
+  wire  bUnpacked_isZero; // @[Test.scala 56:23:@2998.4 Test.scala 57:13:@3003.4]
+  wire  bUnpacked_isInf; // @[Test.scala 56:23:@2998.4 Test.scala 57:13:@3002.4]
+  wire  bUnpacked_sign; // @[Test.scala 56:23:@2998.4 Test.scala 57:13:@3001.4]
+  wire [4:0] bUnpacked_exponent; // @[Test.scala 56:23:@2998.4 Test.scala 57:13:@3000.4]
+  wire [3:0] bUnpacked_fraction; // @[Test.scala 56:23:@2998.4 Test.scala 57:13:@2999.4]
+  wire [7:0] cPacked_bits; // @[Test.scala 59:21:@3004.4 Test.scala 91:11:@3048.4]
+  wire  cUnpacked_isZero; // @[Test.scala 64:23:@3009.4 Test.scala 65:13:@3014.4]
+  wire  cUnpacked_isInf; // @[Test.scala 64:23:@3009.4 Test.scala 65:13:@3013.4]
+  wire  cUnpacked_sign; // @[Test.scala 64:23:@3009.4 Test.scala 65:13:@3012.4]
+  wire [4:0] cUnpacked_exponent; // @[Test.scala 64:23:@3009.4 Test.scala 65:13:@3011.4]
+  wire [3:0] cUnpacked_fraction; // @[Test.scala 64:23:@3009.4 Test.scala 65:13:@3010.4]
+  wire [1:0] trailingBits; // @[Test.scala 67:26:@3015.4 Test.scala 70:16:@3017.4]
+  wire  stickyBit; // @[Test.scala 68:23:@3016.4 Test.scala 71:13:@3018.4]
+  wire [7:0] countOutput; // @[Test.scala 82:25:@3031.4 Test.scala 83:15:@3032.4]
+  wire [7:0] outPacked_bits; // @[Test.scala 97:23:@3059.4 Test.scala 98:13:@3060.4]
+  PositMultiply multiply ( // @[Test.scala 35:24:@2951.4]
     .io_a_isZero(multiply_io_a_isZero),
     .io_a_isInf(multiply_io_a_isInf),
     .io_a_sign(multiply_io_a_sign),
@@ -714,7 +721,7 @@ module Test( // @[:@2841.2]
     .io_trailingBits(multiply_io_trailingBits),
     .io_stickyBit(multiply_io_stickyBit)
   );
-  PositEncode encodeTestA ( // @[Test.scala 39:27:@2862.4]
+  PositEncode encodeTestA ( // @[Test.scala 39:27:@2964.4]
     .io_in_isZero(encodeTestA_io_in_isZero),
     .io_in_isInf(encodeTestA_io_in_isInf),
     .io_in_sign(encodeTestA_io_in_sign),
@@ -722,7 +729,7 @@ module Test( // @[:@2841.2]
     .io_in_fraction(encodeTestA_io_in_fraction),
     .io_out_bits(encodeTestA_io_out_bits)
   );
-  PositDecode decodeTestA ( // @[Test.scala 44:27:@2872.4]
+  PositDecode decodeTestA ( // @[Test.scala 44:27:@2974.4]
     .io_in_bits(decodeTestA_io_in_bits),
     .io_out_isZero(decodeTestA_io_out_isZero),
     .io_out_isInf(decodeTestA_io_out_isInf),
@@ -730,7 +737,7 @@ module Test( // @[:@2841.2]
     .io_out_exponent(decodeTestA_io_out_exponent),
     .io_out_fraction(decodeTestA_io_out_fraction)
   );
-  PositEncode encodeTestB ( // @[Test.scala 49:27:@2882.4]
+  PositEncode encodeTestB ( // @[Test.scala 49:27:@2984.4]
     .io_in_isZero(encodeTestB_io_in_isZero),
     .io_in_isInf(encodeTestB_io_in_isInf),
     .io_in_sign(encodeTestB_io_in_sign),
@@ -738,7 +745,7 @@ module Test( // @[:@2841.2]
     .io_in_fraction(encodeTestB_io_in_fraction),
     .io_out_bits(encodeTestB_io_out_bits)
   );
-  PositDecode decodeTestB ( // @[Test.scala 54:27:@2892.4]
+  PositDecode decodeTestB ( // @[Test.scala 54:27:@2994.4]
     .io_in_bits(decodeTestB_io_in_bits),
     .io_out_isZero(decodeTestB_io_out_isZero),
     .io_out_isInf(decodeTestB_io_out_isInf),
@@ -746,7 +753,7 @@ module Test( // @[:@2841.2]
     .io_out_exponent(decodeTestB_io_out_exponent),
     .io_out_fraction(decodeTestB_io_out_fraction)
   );
-  PositDecode decodeTestC ( // @[Test.scala 62:27:@2903.4]
+  PositDecode decodeTestC ( // @[Test.scala 62:27:@3005.4]
     .io_in_bits(decodeTestC_io_in_bits),
     .io_out_isZero(decodeTestC_io_out_isZero),
     .io_out_isInf(decodeTestC_io_out_isInf),
@@ -754,66 +761,80 @@ module Test( // @[:@2841.2]
     .io_out_exponent(decodeTestC_io_out_exponent),
     .io_out_fraction(decodeTestC_io_out_fraction)
   );
-  CountLeadingZeros countingZeros ( // @[Test.scala 78:29:@2923.4]
+  CountLeadingZeros countingZeros ( // @[Test.scala 78:29:@3025.4]
     .io_in(countingZeros_io_in),
     .io_out(countingZeros_io_out)
   );
-  PositMultiplyPackedToPacked endToEndTest ( // @[Test.scala 88:28:@2941.4]
+  PositMultiplyPackedToPacked endToEndTest ( // @[Test.scala 88:28:@3043.4]
     .io_a_bits(endToEndTest_io_a_bits),
     .io_b_bits(endToEndTest_io_b_bits),
     .io_out_bits(endToEndTest_io_out_bits)
   );
-  assign _T_23 = value + 8'h1; // @[Counter.scala 35:22:@2934.6]
-  assign _T_24 = value + 8'h1; // @[Counter.scala 35:22:@2935.6]
-  assign _T_29 = value == 8'h38; // @[Test.scala 96:15:@2949.4]
-  assign _T_32 = reset == 1'h0; // @[Test.scala 98:11:@2952.6]
-  assign aPacked_bits = encodeTestA_io_out_bits; // @[Test.scala 41:21:@2870.4 Test.scala 42:11:@2871.4]
-  assign aUnpacked_isZero = decodeTestA_io_out_isZero; // @[Test.scala 46:23:@2876.4 Test.scala 47:13:@2881.4]
-  assign aUnpacked_isInf = decodeTestA_io_out_isInf; // @[Test.scala 46:23:@2876.4 Test.scala 47:13:@2880.4]
-  assign aUnpacked_sign = decodeTestA_io_out_sign; // @[Test.scala 46:23:@2876.4 Test.scala 47:13:@2879.4]
-  assign aUnpacked_exponent = decodeTestA_io_out_exponent; // @[Test.scala 46:23:@2876.4 Test.scala 47:13:@2878.4]
-  assign aUnpacked_fraction = decodeTestA_io_out_fraction; // @[Test.scala 46:23:@2876.4 Test.scala 47:13:@2877.4]
-  assign bPacked_bits = encodeTestB_io_out_bits; // @[Test.scala 51:21:@2890.4 Test.scala 52:11:@2891.4]
-  assign bUnpacked_isZero = decodeTestB_io_out_isZero; // @[Test.scala 56:23:@2896.4 Test.scala 57:13:@2901.4]
-  assign bUnpacked_isInf = decodeTestB_io_out_isInf; // @[Test.scala 56:23:@2896.4 Test.scala 57:13:@2900.4]
-  assign bUnpacked_sign = decodeTestB_io_out_sign; // @[Test.scala 56:23:@2896.4 Test.scala 57:13:@2899.4]
-  assign bUnpacked_exponent = decodeTestB_io_out_exponent; // @[Test.scala 56:23:@2896.4 Test.scala 57:13:@2898.4]
-  assign bUnpacked_fraction = decodeTestB_io_out_fraction; // @[Test.scala 56:23:@2896.4 Test.scala 57:13:@2897.4]
-  assign cPacked_bits = endToEndTest_io_out_bits; // @[Test.scala 59:21:@2902.4 Test.scala 91:11:@2946.4]
-  assign cUnpacked_isZero = decodeTestC_io_out_isZero; // @[Test.scala 64:23:@2907.4 Test.scala 65:13:@2912.4]
-  assign cUnpacked_isInf = decodeTestC_io_out_isInf; // @[Test.scala 64:23:@2907.4 Test.scala 65:13:@2911.4]
-  assign cUnpacked_sign = decodeTestC_io_out_sign; // @[Test.scala 64:23:@2907.4 Test.scala 65:13:@2910.4]
-  assign cUnpacked_exponent = decodeTestC_io_out_exponent; // @[Test.scala 64:23:@2907.4 Test.scala 65:13:@2909.4]
-  assign cUnpacked_fraction = decodeTestC_io_out_fraction; // @[Test.scala 64:23:@2907.4 Test.scala 65:13:@2908.4]
-  assign trailingBits = multiply_io_trailingBits; // @[Test.scala 67:26:@2913.4 Test.scala 70:16:@2915.4]
-  assign stickyBit = multiply_io_stickyBit; // @[Test.scala 68:23:@2914.4 Test.scala 71:13:@2916.4]
-  assign countOutput = {{5'd0}, countingZeros_io_out}; // @[Test.scala 82:25:@2929.4 Test.scala 83:15:@2930.4]
-  assign multiply_io_a_isZero = 1'h0; // @[Test.scala 36:17:@2856.4]
-  assign multiply_io_a_isInf = 1'h0; // @[Test.scala 36:17:@2855.4]
-  assign multiply_io_a_sign = 1'h0; // @[Test.scala 36:17:@2854.4]
-  assign multiply_io_a_exponent = 5'he; // @[Test.scala 36:17:@2853.4]
-  assign multiply_io_a_fraction = 4'h4; // @[Test.scala 36:17:@2852.4]
-  assign multiply_io_b_isZero = 1'h0; // @[Test.scala 37:17:@2861.4]
-  assign multiply_io_b_isInf = 1'h0; // @[Test.scala 37:17:@2860.4]
-  assign multiply_io_b_sign = 1'h0; // @[Test.scala 37:17:@2859.4]
-  assign multiply_io_b_exponent = 5'hf; // @[Test.scala 37:17:@2858.4]
-  assign multiply_io_b_fraction = 4'h0; // @[Test.scala 37:17:@2857.4]
-  assign encodeTestA_io_in_isZero = 1'h0; // @[Test.scala 40:21:@2869.4]
-  assign encodeTestA_io_in_isInf = 1'h0; // @[Test.scala 40:21:@2868.4]
-  assign encodeTestA_io_in_sign = 1'h0; // @[Test.scala 40:21:@2867.4]
-  assign encodeTestA_io_in_exponent = 5'he; // @[Test.scala 40:21:@2866.4]
-  assign encodeTestA_io_in_fraction = 4'h4; // @[Test.scala 40:21:@2865.4]
-  assign decodeTestA_io_in_bits = encodeTestA_io_out_bits; // @[Test.scala 45:21:@2875.4]
-  assign encodeTestB_io_in_isZero = 1'h0; // @[Test.scala 50:21:@2889.4]
-  assign encodeTestB_io_in_isInf = 1'h0; // @[Test.scala 50:21:@2888.4]
-  assign encodeTestB_io_in_sign = 1'h0; // @[Test.scala 50:21:@2887.4]
-  assign encodeTestB_io_in_exponent = 5'hf; // @[Test.scala 50:21:@2886.4]
-  assign encodeTestB_io_in_fraction = 4'h0; // @[Test.scala 50:21:@2885.4]
-  assign decodeTestB_io_in_bits = encodeTestB_io_out_bits; // @[Test.scala 55:21:@2895.4]
-  assign decodeTestC_io_in_bits = endToEndTest_io_out_bits; // @[Test.scala 63:21:@2906.4]
-  assign countingZeros_io_in = 6'h4; // @[Test.scala 81:23:@2928.4]
-  assign endToEndTest_io_a_bits = encodeTestA_io_out_bits; // @[Test.scala 89:21:@2944.4]
-  assign endToEndTest_io_b_bits = encodeTestB_io_out_bits; // @[Test.scala 90:21:@2945.4]
+  PositEncode encodeTestOut ( // @[Test.scala 95:29:@3051.4]
+    .io_in_isZero(encodeTestOut_io_in_isZero),
+    .io_in_isInf(encodeTestOut_io_in_isInf),
+    .io_in_sign(encodeTestOut_io_in_sign),
+    .io_in_exponent(encodeTestOut_io_in_exponent),
+    .io_in_fraction(encodeTestOut_io_in_fraction),
+    .io_out_bits(encodeTestOut_io_out_bits)
+  );
+  assign _T_23 = value + 8'h1; // @[Counter.scala 35:22:@3036.6]
+  assign _T_24 = value + 8'h1; // @[Counter.scala 35:22:@3037.6]
+  assign _T_30 = value == 8'h38; // @[Test.scala 100:15:@3061.4]
+  assign _T_33 = reset == 1'h0; // @[Test.scala 102:11:@3064.6]
+  assign aPacked_bits = encodeTestA_io_out_bits; // @[Test.scala 41:21:@2972.4 Test.scala 42:11:@2973.4]
+  assign aUnpacked_isZero = decodeTestA_io_out_isZero; // @[Test.scala 46:23:@2978.4 Test.scala 47:13:@2983.4]
+  assign aUnpacked_isInf = decodeTestA_io_out_isInf; // @[Test.scala 46:23:@2978.4 Test.scala 47:13:@2982.4]
+  assign aUnpacked_sign = decodeTestA_io_out_sign; // @[Test.scala 46:23:@2978.4 Test.scala 47:13:@2981.4]
+  assign aUnpacked_exponent = decodeTestA_io_out_exponent; // @[Test.scala 46:23:@2978.4 Test.scala 47:13:@2980.4]
+  assign aUnpacked_fraction = decodeTestA_io_out_fraction; // @[Test.scala 46:23:@2978.4 Test.scala 47:13:@2979.4]
+  assign bPacked_bits = encodeTestB_io_out_bits; // @[Test.scala 51:21:@2992.4 Test.scala 52:11:@2993.4]
+  assign bUnpacked_isZero = decodeTestB_io_out_isZero; // @[Test.scala 56:23:@2998.4 Test.scala 57:13:@3003.4]
+  assign bUnpacked_isInf = decodeTestB_io_out_isInf; // @[Test.scala 56:23:@2998.4 Test.scala 57:13:@3002.4]
+  assign bUnpacked_sign = decodeTestB_io_out_sign; // @[Test.scala 56:23:@2998.4 Test.scala 57:13:@3001.4]
+  assign bUnpacked_exponent = decodeTestB_io_out_exponent; // @[Test.scala 56:23:@2998.4 Test.scala 57:13:@3000.4]
+  assign bUnpacked_fraction = decodeTestB_io_out_fraction; // @[Test.scala 56:23:@2998.4 Test.scala 57:13:@2999.4]
+  assign cPacked_bits = endToEndTest_io_out_bits; // @[Test.scala 59:21:@3004.4 Test.scala 91:11:@3048.4]
+  assign cUnpacked_isZero = decodeTestC_io_out_isZero; // @[Test.scala 64:23:@3009.4 Test.scala 65:13:@3014.4]
+  assign cUnpacked_isInf = decodeTestC_io_out_isInf; // @[Test.scala 64:23:@3009.4 Test.scala 65:13:@3013.4]
+  assign cUnpacked_sign = decodeTestC_io_out_sign; // @[Test.scala 64:23:@3009.4 Test.scala 65:13:@3012.4]
+  assign cUnpacked_exponent = decodeTestC_io_out_exponent; // @[Test.scala 64:23:@3009.4 Test.scala 65:13:@3011.4]
+  assign cUnpacked_fraction = decodeTestC_io_out_fraction; // @[Test.scala 64:23:@3009.4 Test.scala 65:13:@3010.4]
+  assign trailingBits = multiply_io_trailingBits; // @[Test.scala 67:26:@3015.4 Test.scala 70:16:@3017.4]
+  assign stickyBit = multiply_io_stickyBit; // @[Test.scala 68:23:@3016.4 Test.scala 71:13:@3018.4]
+  assign countOutput = {{5'd0}, countingZeros_io_out}; // @[Test.scala 82:25:@3031.4 Test.scala 83:15:@3032.4]
+  assign outPacked_bits = encodeTestOut_io_out_bits; // @[Test.scala 97:23:@3059.4 Test.scala 98:13:@3060.4]
+  assign multiply_io_a_isZero = 1'h0; // @[Test.scala 36:17:@2958.4]
+  assign multiply_io_a_isInf = 1'h0; // @[Test.scala 36:17:@2957.4]
+  assign multiply_io_a_sign = 1'h0; // @[Test.scala 36:17:@2956.4]
+  assign multiply_io_a_exponent = 5'he; // @[Test.scala 36:17:@2955.4]
+  assign multiply_io_a_fraction = 4'h4; // @[Test.scala 36:17:@2954.4]
+  assign multiply_io_b_isZero = 1'h0; // @[Test.scala 37:17:@2963.4]
+  assign multiply_io_b_isInf = 1'h0; // @[Test.scala 37:17:@2962.4]
+  assign multiply_io_b_sign = 1'h0; // @[Test.scala 37:17:@2961.4]
+  assign multiply_io_b_exponent = 5'hf; // @[Test.scala 37:17:@2960.4]
+  assign multiply_io_b_fraction = 4'h0; // @[Test.scala 37:17:@2959.4]
+  assign encodeTestA_io_in_isZero = 1'h0; // @[Test.scala 40:21:@2971.4]
+  assign encodeTestA_io_in_isInf = 1'h0; // @[Test.scala 40:21:@2970.4]
+  assign encodeTestA_io_in_sign = 1'h0; // @[Test.scala 40:21:@2969.4]
+  assign encodeTestA_io_in_exponent = 5'he; // @[Test.scala 40:21:@2968.4]
+  assign encodeTestA_io_in_fraction = 4'h4; // @[Test.scala 40:21:@2967.4]
+  assign decodeTestA_io_in_bits = encodeTestA_io_out_bits; // @[Test.scala 45:21:@2977.4]
+  assign encodeTestB_io_in_isZero = 1'h0; // @[Test.scala 50:21:@2991.4]
+  assign encodeTestB_io_in_isInf = 1'h0; // @[Test.scala 50:21:@2990.4]
+  assign encodeTestB_io_in_sign = 1'h0; // @[Test.scala 50:21:@2989.4]
+  assign encodeTestB_io_in_exponent = 5'hf; // @[Test.scala 50:21:@2988.4]
+  assign encodeTestB_io_in_fraction = 4'h0; // @[Test.scala 50:21:@2987.4]
+  assign decodeTestB_io_in_bits = encodeTestB_io_out_bits; // @[Test.scala 55:21:@2997.4]
+  assign decodeTestC_io_in_bits = endToEndTest_io_out_bits; // @[Test.scala 63:21:@3008.4]
+  assign countingZeros_io_in = 6'hf; // @[Test.scala 81:23:@3030.4]
+  assign endToEndTest_io_a_bits = encodeTestA_io_out_bits; // @[Test.scala 89:21:@3046.4]
+  assign endToEndTest_io_b_bits = encodeTestB_io_out_bits; // @[Test.scala 90:21:@3047.4]
+  assign encodeTestOut_io_in_isZero = multiply_io_out_isZero; // @[Test.scala 96:23:@3058.4]
+  assign encodeTestOut_io_in_isInf = multiply_io_out_isInf; // @[Test.scala 96:23:@3057.4]
+  assign encodeTestOut_io_in_sign = multiply_io_out_sign; // @[Test.scala 96:23:@3056.4]
+  assign encodeTestOut_io_in_exponent = multiply_io_out_exponent; // @[Test.scala 96:23:@3055.4]
+  assign encodeTestOut_io_in_fraction = multiply_io_out_fraction; // @[Test.scala 96:23:@3054.4]
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
 `define RANDOMIZE
 `endif
@@ -854,8 +875,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"a.exponent is %b \n",5'he); // @[Test.scala 98:11:@2954.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"a.exponent is %b \n",5'he); // @[Test.scala 102:11:@3066.8]
         end
     `ifdef PRINTF_COND
       end
@@ -865,8 +886,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"a.fraction is %b \n",4'h4); // @[Test.scala 99:11:@2959.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"a.fraction is %b \n",4'h4); // @[Test.scala 103:11:@3071.8]
         end
     `ifdef PRINTF_COND
       end
@@ -876,8 +897,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"b.exponent is %b \n",5'hf); // @[Test.scala 100:11:@2964.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"b.exponent is %b \n",5'hf); // @[Test.scala 104:11:@3076.8]
         end
     `ifdef PRINTF_COND
       end
@@ -887,8 +908,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"b.fraction is %b \n",4'h0); // @[Test.scala 101:11:@2969.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"b.fraction is %b \n",4'h0); // @[Test.scala 105:11:@3081.8]
         end
     `ifdef PRINTF_COND
       end
@@ -898,8 +919,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"aPacked is %b \n",aPacked_bits); // @[Test.scala 103:11:@2974.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"aPacked is %b \n",aPacked_bits); // @[Test.scala 107:11:@3086.8]
         end
     `ifdef PRINTF_COND
       end
@@ -909,8 +930,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"now testing decoding for packed a... \n"); // @[Test.scala 104:11:@2979.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"now testing decoding for packed a... \n"); // @[Test.scala 108:11:@3091.8]
         end
     `ifdef PRINTF_COND
       end
@@ -920,8 +941,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"sign is %b \n",aUnpacked_sign); // @[Test.scala 105:11:@2984.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"sign is %b \n",aUnpacked_sign); // @[Test.scala 109:11:@3096.8]
         end
     `ifdef PRINTF_COND
       end
@@ -931,8 +952,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"isInf is %b \n",aUnpacked_isInf); // @[Test.scala 106:11:@2989.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"isInf is %b \n",aUnpacked_isInf); // @[Test.scala 110:11:@3101.8]
         end
     `ifdef PRINTF_COND
       end
@@ -942,8 +963,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"isZero is %b \n",aUnpacked_isZero); // @[Test.scala 107:11:@2994.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"isZero is %b \n",aUnpacked_isZero); // @[Test.scala 111:11:@3106.8]
         end
     `ifdef PRINTF_COND
       end
@@ -953,8 +974,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"exponent is %b \n",aUnpacked_exponent); // @[Test.scala 108:11:@2999.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"exponent is %b \n",aUnpacked_exponent); // @[Test.scala 112:11:@3111.8]
         end
     `ifdef PRINTF_COND
       end
@@ -964,8 +985,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"fraction is %b \n",aUnpacked_fraction); // @[Test.scala 109:11:@3004.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"fraction is %b \n",aUnpacked_fraction); // @[Test.scala 113:11:@3116.8]
         end
     `ifdef PRINTF_COND
       end
@@ -975,8 +996,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"\n"); // @[Test.scala 110:11:@3009.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"\n"); // @[Test.scala 114:11:@3121.8]
         end
     `ifdef PRINTF_COND
       end
@@ -986,8 +1007,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"bPacked is %b \n",bPacked_bits); // @[Test.scala 111:11:@3014.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"bPacked is %b \n",bPacked_bits); // @[Test.scala 115:11:@3126.8]
         end
     `ifdef PRINTF_COND
       end
@@ -997,8 +1018,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"now testing decoding for packed b... \n"); // @[Test.scala 112:11:@3019.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"now testing decoding for packed b... \n"); // @[Test.scala 116:11:@3131.8]
         end
     `ifdef PRINTF_COND
       end
@@ -1008,8 +1029,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"sign is %b \n",bUnpacked_sign); // @[Test.scala 113:11:@3024.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"sign is %b \n",bUnpacked_sign); // @[Test.scala 117:11:@3136.8]
         end
     `ifdef PRINTF_COND
       end
@@ -1019,8 +1040,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"isInf is %b \n",bUnpacked_isInf); // @[Test.scala 114:11:@3029.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"isInf is %b \n",bUnpacked_isInf); // @[Test.scala 118:11:@3141.8]
         end
     `ifdef PRINTF_COND
       end
@@ -1030,8 +1051,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"isZero is %b \n",bUnpacked_isZero); // @[Test.scala 115:11:@3034.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"isZero is %b \n",bUnpacked_isZero); // @[Test.scala 119:11:@3146.8]
         end
     `ifdef PRINTF_COND
       end
@@ -1041,8 +1062,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"exponent is %b \n",bUnpacked_exponent); // @[Test.scala 116:11:@3039.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"exponent is %b \n",bUnpacked_exponent); // @[Test.scala 120:11:@3151.8]
         end
     `ifdef PRINTF_COND
       end
@@ -1052,8 +1073,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"fraction is %b \n",bUnpacked_fraction); // @[Test.scala 117:11:@3044.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"fraction is %b \n",bUnpacked_fraction); // @[Test.scala 121:11:@3156.8]
         end
     `ifdef PRINTF_COND
       end
@@ -1063,8 +1084,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"\n"); // @[Test.scala 118:11:@3049.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"\n"); // @[Test.scala 122:11:@3161.8]
         end
     `ifdef PRINTF_COND
       end
@@ -1074,8 +1095,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"now testing packed to packed multiplication (end to end) \n"); // @[Test.scala 128:11:@3054.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"\n"); // @[Test.scala 132:11:@3166.8]
         end
     `ifdef PRINTF_COND
       end
@@ -1085,8 +1106,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"results: \n"); // @[Test.scala 129:11:@3059.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"counting leading zeros of %b \n",6'hf); // @[Test.scala 133:11:@3171.8]
         end
     `ifdef PRINTF_COND
       end
@@ -1096,8 +1117,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"%b is the packed output \n",cPacked_bits); // @[Test.scala 130:11:@3064.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"output is %d \n",countOutput); // @[Test.scala 134:11:@3176.8]
         end
     `ifdef PRINTF_COND
       end
@@ -1107,8 +1128,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"sign is %b \n",cUnpacked_sign); // @[Test.scala 131:11:@3069.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"\n"); // @[Test.scala 135:11:@3181.8]
         end
     `ifdef PRINTF_COND
       end
@@ -1118,8 +1139,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"isInf is %b \n",cUnpacked_isInf); // @[Test.scala 132:11:@3074.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"out.sign is %b \n",multiply_io_out_sign); // @[Test.scala 137:11:@3186.8]
         end
     `ifdef PRINTF_COND
       end
@@ -1129,8 +1150,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"isZero is %b \n",cUnpacked_isZero); // @[Test.scala 133:11:@3079.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"out.isZero is %b \n",multiply_io_out_isZero); // @[Test.scala 138:11:@3191.8]
         end
     `ifdef PRINTF_COND
       end
@@ -1140,8 +1161,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"exponent is %b \n",cUnpacked_exponent); // @[Test.scala 134:11:@3084.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"out.isInf is %b \n",multiply_io_out_isInf); // @[Test.scala 139:11:@3196.8]
         end
     `ifdef PRINTF_COND
       end
@@ -1151,8 +1172,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"fraction is %b \n",cUnpacked_fraction); // @[Test.scala 135:11:@3089.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"out.trailingBits is %b \n",trailingBits); // @[Test.scala 140:11:@3201.8]
         end
     `ifdef PRINTF_COND
       end
@@ -1162,8 +1183,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"\n"); // @[Test.scala 136:11:@3094.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"out.stickyBit is %b \n",stickyBit); // @[Test.scala 141:11:@3206.8]
         end
     `ifdef PRINTF_COND
       end
@@ -1173,8 +1194,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"counting leading zeros of %b \n",6'h4); // @[Test.scala 137:11:@3099.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"out.exponent is %b \n",multiply_io_out_exponent); // @[Test.scala 143:11:@3211.8]
         end
     `ifdef PRINTF_COND
       end
@@ -1184,8 +1205,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"output is %d \n",countOutput); // @[Test.scala 138:11:@3104.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"out.fraction is %b \n",multiply_io_out_fraction); // @[Test.scala 144:11:@3216.8]
         end
     `ifdef PRINTF_COND
       end
@@ -1195,8 +1216,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"\n"); // @[Test.scala 139:11:@3109.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"outPacked is %b",outPacked_bits); // @[Test.scala 145:11:@3221.8]
         end
     `ifdef PRINTF_COND
       end
@@ -1206,8 +1227,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"out.sign is %b \n",multiply_io_out_sign); // @[Test.scala 141:11:@3114.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"\n \n"); // @[Test.scala 146:11:@3226.8]
         end
     `ifdef PRINTF_COND
       end
@@ -1217,8 +1238,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"out.isZero is %b \n",multiply_io_out_isZero); // @[Test.scala 142:11:@3119.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"now testing packed to packed multiplication (end to end) \n"); // @[Test.scala 147:11:@3231.8]
         end
     `ifdef PRINTF_COND
       end
@@ -1228,8 +1249,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"out.isInf is %b \n",multiply_io_out_isInf); // @[Test.scala 143:11:@3124.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"results: \n"); // @[Test.scala 148:11:@3236.8]
         end
     `ifdef PRINTF_COND
       end
@@ -1239,8 +1260,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"out.trailingBits is %b \n",trailingBits); // @[Test.scala 144:11:@3129.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"%b is the packed output \n",cPacked_bits); // @[Test.scala 149:11:@3241.8]
         end
     `ifdef PRINTF_COND
       end
@@ -1250,8 +1271,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"out.stickyBit is %b \n",stickyBit); // @[Test.scala 145:11:@3134.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"sign is %b \n",cUnpacked_sign); // @[Test.scala 150:11:@3246.8]
         end
     `ifdef PRINTF_COND
       end
@@ -1261,8 +1282,8 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"out.exponent is %b \n",multiply_io_out_exponent); // @[Test.scala 147:11:@3139.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"isInf is %b \n",cUnpacked_isInf); // @[Test.scala 151:11:@3251.8]
         end
     `ifdef PRINTF_COND
       end
@@ -1272,8 +1293,41 @@ module Test( // @[:@2841.2]
     `ifdef PRINTF_COND
       if (`PRINTF_COND) begin
     `endif
-        if (_T_29 & _T_32) begin
-          $fwrite(32'h80000002,"out.fraction is %b \n",multiply_io_out_fraction); // @[Test.scala 148:11:@3144.8]
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"isZero is %b \n",cUnpacked_isZero); // @[Test.scala 152:11:@3256.8]
+        end
+    `ifdef PRINTF_COND
+      end
+    `endif
+    `endif // SYNTHESIS
+    `ifndef SYNTHESIS
+    `ifdef PRINTF_COND
+      if (`PRINTF_COND) begin
+    `endif
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"exponent is %b \n",cUnpacked_exponent); // @[Test.scala 153:11:@3261.8]
+        end
+    `ifdef PRINTF_COND
+      end
+    `endif
+    `endif // SYNTHESIS
+    `ifndef SYNTHESIS
+    `ifdef PRINTF_COND
+      if (`PRINTF_COND) begin
+    `endif
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"fraction is %b \n",cUnpacked_fraction); // @[Test.scala 154:11:@3266.8]
+        end
+    `ifdef PRINTF_COND
+      end
+    `endif
+    `endif // SYNTHESIS
+    `ifndef SYNTHESIS
+    `ifdef PRINTF_COND
+      if (`PRINTF_COND) begin
+    `endif
+        if (_T_30 & _T_33) begin
+          $fwrite(32'h80000002,"\n"); // @[Test.scala 155:11:@3271.8]
         end
     `ifdef PRINTF_COND
       end

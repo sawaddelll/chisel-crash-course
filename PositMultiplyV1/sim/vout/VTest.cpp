@@ -69,7 +69,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    VTest::_sequent__TOP__2\n"); );
     VTest* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
-    // ALWAYS at /home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/sim/vout/Test.v:847
+    // ALWAYS at /home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/sim/vout/Test.v:868
     if (VL_UNLIKELY(((0x38U == (IData)(vlTOPp->Test__DOT__value)) 
 		     & (~ (IData)(vlTOPp->reset))))) {
 	VL_FWRITEF(0x80000002U,"a.exponent is 01110 \n");
@@ -149,6 +149,58 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
     if (VL_UNLIKELY(((0x38U == (IData)(vlTOPp->Test__DOT__value)) 
 		     & (~ (IData)(vlTOPp->reset))))) {
 	VL_FWRITEF(0x80000002U,"\n");
+    }
+    if (VL_UNLIKELY(((0x38U == (IData)(vlTOPp->Test__DOT__value)) 
+		     & (~ (IData)(vlTOPp->reset))))) {
+	VL_FWRITEF(0x80000002U,"\n");
+    }
+    if (VL_UNLIKELY(((0x38U == (IData)(vlTOPp->Test__DOT__value)) 
+		     & (~ (IData)(vlTOPp->reset))))) {
+	VL_FWRITEF(0x80000002U,"counting leading zeros of 001111 \n");
+    }
+    if (VL_UNLIKELY(((0x38U == (IData)(vlTOPp->Test__DOT__value)) 
+		     & (~ (IData)(vlTOPp->reset))))) {
+	VL_FWRITEF(0x80000002U,"output is   2 \n");
+    }
+    if (VL_UNLIKELY(((0x38U == (IData)(vlTOPp->Test__DOT__value)) 
+		     & (~ (IData)(vlTOPp->reset))))) {
+	VL_FWRITEF(0x80000002U,"\n");
+    }
+    if (VL_UNLIKELY(((0x38U == (IData)(vlTOPp->Test__DOT__value)) 
+		     & (~ (IData)(vlTOPp->reset))))) {
+	VL_FWRITEF(0x80000002U,"out.sign is 0 \n");
+    }
+    if (VL_UNLIKELY(((0x38U == (IData)(vlTOPp->Test__DOT__value)) 
+		     & (~ (IData)(vlTOPp->reset))))) {
+	VL_FWRITEF(0x80000002U,"out.isZero is 0 \n");
+    }
+    if (VL_UNLIKELY(((0x38U == (IData)(vlTOPp->Test__DOT__value)) 
+		     & (~ (IData)(vlTOPp->reset))))) {
+	VL_FWRITEF(0x80000002U,"out.isInf is 0 \n");
+    }
+    if (VL_UNLIKELY(((0x38U == (IData)(vlTOPp->Test__DOT__value)) 
+		     & (~ (IData)(vlTOPp->reset))))) {
+	VL_FWRITEF(0x80000002U,"out.trailingBits is 00 \n");
+    }
+    if (VL_UNLIKELY(((0x38U == (IData)(vlTOPp->Test__DOT__value)) 
+		     & (~ (IData)(vlTOPp->reset))))) {
+	VL_FWRITEF(0x80000002U,"out.stickyBit is 0 \n");
+    }
+    if (VL_UNLIKELY(((0x38U == (IData)(vlTOPp->Test__DOT__value)) 
+		     & (~ (IData)(vlTOPp->reset))))) {
+	VL_FWRITEF(0x80000002U,"out.exponent is 10001 \n");
+    }
+    if (VL_UNLIKELY(((0x38U == (IData)(vlTOPp->Test__DOT__value)) 
+		     & (~ (IData)(vlTOPp->reset))))) {
+	VL_FWRITEF(0x80000002U,"out.fraction is 0100 \n");
+    }
+    if (VL_UNLIKELY(((0x38U == (IData)(vlTOPp->Test__DOT__value)) 
+		     & (~ (IData)(vlTOPp->reset))))) {
+	VL_FWRITEF(0x80000002U,"outPacked is 01110101");
+    }
+    if (VL_UNLIKELY(((0x38U == (IData)(vlTOPp->Test__DOT__value)) 
+		     & (~ (IData)(vlTOPp->reset))))) {
+	VL_FWRITEF(0x80000002U,"\n \n");
     }
     if (VL_UNLIKELY(((0x38U == (IData)(vlTOPp->Test__DOT__value)) 
 		     & (~ (IData)(vlTOPp->reset))))) {
@@ -247,47 +299,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
 		     & (~ (IData)(vlTOPp->reset))))) {
 	VL_FWRITEF(0x80000002U,"\n");
     }
-    if (VL_UNLIKELY(((0x38U == (IData)(vlTOPp->Test__DOT__value)) 
-		     & (~ (IData)(vlTOPp->reset))))) {
-	VL_FWRITEF(0x80000002U,"counting leading zeros of 000100 \n");
-    }
-    if (VL_UNLIKELY(((0x38U == (IData)(vlTOPp->Test__DOT__value)) 
-		     & (~ (IData)(vlTOPp->reset))))) {
-	VL_FWRITEF(0x80000002U,"output is   3 \n");
-    }
-    if (VL_UNLIKELY(((0x38U == (IData)(vlTOPp->Test__DOT__value)) 
-		     & (~ (IData)(vlTOPp->reset))))) {
-	VL_FWRITEF(0x80000002U,"\n");
-    }
-    if (VL_UNLIKELY(((0x38U == (IData)(vlTOPp->Test__DOT__value)) 
-		     & (~ (IData)(vlTOPp->reset))))) {
-	VL_FWRITEF(0x80000002U,"out.sign is 0 \n");
-    }
-    if (VL_UNLIKELY(((0x38U == (IData)(vlTOPp->Test__DOT__value)) 
-		     & (~ (IData)(vlTOPp->reset))))) {
-	VL_FWRITEF(0x80000002U,"out.isZero is 0 \n");
-    }
-    if (VL_UNLIKELY(((0x38U == (IData)(vlTOPp->Test__DOT__value)) 
-		     & (~ (IData)(vlTOPp->reset))))) {
-	VL_FWRITEF(0x80000002U,"out.isInf is 0 \n");
-    }
-    if (VL_UNLIKELY(((0x38U == (IData)(vlTOPp->Test__DOT__value)) 
-		     & (~ (IData)(vlTOPp->reset))))) {
-	VL_FWRITEF(0x80000002U,"out.trailingBits is 00 \n");
-    }
-    if (VL_UNLIKELY(((0x38U == (IData)(vlTOPp->Test__DOT__value)) 
-		     & (~ (IData)(vlTOPp->reset))))) {
-	VL_FWRITEF(0x80000002U,"out.stickyBit is 0 \n");
-    }
-    if (VL_UNLIKELY(((0x38U == (IData)(vlTOPp->Test__DOT__value)) 
-		     & (~ (IData)(vlTOPp->reset))))) {
-	VL_FWRITEF(0x80000002U,"out.exponent is 10001 \n");
-    }
-    if (VL_UNLIKELY(((0x38U == (IData)(vlTOPp->Test__DOT__value)) 
-		     & (~ (IData)(vlTOPp->reset))))) {
-	VL_FWRITEF(0x80000002U,"out.fraction is 0100 \n");
-    }
-    // ALWAYS at /home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/sim/vout/Test.v:847
+    // ALWAYS at /home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/sim/vout/Test.v:868
     vlTOPp->Test__DOT__value = ((IData)(vlTOPp->reset)
 				 ? 0U : (IData)(vlTOPp->Test__DOT___T_24));
     vlTOPp->Test__DOT___T_24 = (0xffU & ((IData)(1U) 
