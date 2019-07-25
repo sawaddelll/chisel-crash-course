@@ -1,0 +1,13 @@
+# DESCRIPTION: Verilator output: Timestamp data for --skip-identical.  Delete at will.
+C "--cc --exe -Mdir /home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/sim/vout --top-module Test /home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/sim/vout/Test.v /home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/src/test/resources/csrc/main.cc -Wno-STMTDLY -Wno-WIDTH -Wno-CASEINCOMPLETE --output-split 20000 --output-split-cfuncs 20000 --x-assign unique +define+RANDOMIZE_GARBAGE_ASSIGN +define+RANDOMIZE_REG_INIT +define+RANDOMIZE_MEM_INIT -CFLAGS -I/home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/src/test/resources/csrc -include VTest.h -DVNAME=VTest -o /home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/sim/vout/Test"
+S     64909 45615266  1564021478   213131662  1564021478   213131662 "/home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/sim/vout/Test.v"
+T     14165 45615296  1564021478   469136611  1564021478   469136611 "/home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/sim/vout/VTest.cpp"
+T      3091 45615295  1564021478   469136611  1564021478   469136611 "/home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/sim/vout/VTest.h"
+T      2158 45616235  1564021478   469136611  1564021478   469136611 "/home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/sim/vout/VTest.mk"
+T      3344 45615297  1564021478   469136611  1564021478   469136611 "/home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/sim/vout/VTest__Slow.cpp"
+T       520 45615294  1564021478   469136611  1564021478   469136611 "/home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/sim/vout/VTest__Syms.cpp"
+T       703 45615293  1564021478   469136611  1564021478   469136611 "/home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/sim/vout/VTest__Syms.h"
+T       777 45616236  1564021478   469136611  1564021478   469136611 "/home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/sim/vout/VTest__ver.d"
+T         0        0  1564021478   469136611  1564021478   469136611 "/home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/sim/vout/VTest__verFiles.dat"
+T      1168 45615298  1564021478   469136611  1564021478   469136611 "/home/samsow/myChisel/chisel-crash-course/PositMultiplyV1/sim/vout/VTest_classes.mk"
+S   6619528 15730091  1556424481   372840019  1556424481   372840019 "/usr/local/bin/verilator_bin"

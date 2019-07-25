@@ -1,5 +1,5 @@
 tb_name = Test
-timeout_cycles = 11
+timeout_cycles = 257
 
 verilator_bin = verilator
 

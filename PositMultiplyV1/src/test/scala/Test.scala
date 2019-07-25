@@ -57,7 +57,7 @@ class Test extends Module {
   bUnpacked := decodeTestB.io.out
   
   val cPacked = Wire(new PackedPosit(width = width, es = es))
-  cPacked.bits := 64.U
+  // cPacked.bits := 64.U
   
   val decodeTestC = Module(new PositDecode(width = width, es = es))
   decodeTestC.io.in := cPacked
@@ -77,12 +77,22 @@ class Test extends Module {
   
   val countingZeros = Module(new CountLeadingZeros(WIDTH = width - 2, ADD_OFFSET = 0))
   val countTest = Wire(UInt((width-2).W))
-  countTest := 1.U((width-2).W)
+  countTest := 4.U((width-2).W)
   countingZeros.io.in := countTest
   val countOutput = Wire(UInt(width.W))
   countOutput := countingZeros.io.out
   val (cycles, _) = Counter(true.B, 256)
-    
+
+  val trailingBits2 = Wire(UInt(2.W))
+  val stickyBit2 = Wire(UInt(1.W))
+  val endToEndTest = Module(new PositMultiplyPackedToPacked(width = width, es = es, trailing_bits = 2))
+  endToEndTest.io.a := aPacked
+  endToEndTest.io.b := bPacked
+  cPacked := endToEndTest.io.out
+  trailingBits2 := endToEndTest.io.trailingBits
+  stickyBit2 := endToEndTest.io.stickyBit
+
+
   when(cycles === 56.U) {
 //for(i <- 0 to 10000) {//  while(true) {
     printf("a.exponent is %b \n",gen.io.a.exponent)
@@ -107,8 +117,17 @@ class Test extends Module {
     printf("fraction is %b \n", bUnpacked.fraction)
     printf("\n")
 
-  
+    /*
     printf("now testing decoding for packed 1... \n")
+    printf("sign is %b \n", cUnpacked.sign)
+    printf("isInf is %b \n", cUnpacked.isInf)
+    printf("isZero is %b \n", cUnpacked.isZero)
+    printf("exponent is %b \n", cUnpacked.exponent)
+    printf("fraction is %b \n", cUnpacked.fraction)
+    */
+    printf("now testing packed to packed multiplication (end to end) \n")
+    printf("results: \n")
+    printf("%b is the packed output \n", cPacked.bits)
     printf("sign is %b \n", cUnpacked.sign)
     printf("isInf is %b \n", cUnpacked.isInf)
     printf("isZero is %b \n", cUnpacked.isZero)
