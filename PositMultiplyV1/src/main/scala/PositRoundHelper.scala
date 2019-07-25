@@ -106,7 +106,7 @@ class PositRoundHelper(width: Int = 8, es: Int = 1, trailing_bits: Int = 2) exte
   // exc bits    x    2    1    0    0    1    2    3(*)
   // FIXME: (*) not true for max regime. Does this matter?
 
-  when(signedRegime >= 0.U) {
+  when(signedRegime >= 0.S) {
     io.excessRegimeBits := signedRegime(LOCAL_SIGNED_REGIME_BITS-2, 0).asUInt
   } .otherwise {
     io.excessRegimeBits := (~signedRegime(LOCAL_SIGNED_REGIME_BITS-2, 0)).asUInt
