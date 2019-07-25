@@ -19,7 +19,7 @@ class PositMultiplyPackedToPacked(width: Int = 8, es: Int = 1, trailing_bits: In
   val decA = Wire(new UnpackedPosit(width, es))
   val decB = Wire(new UnpackedPosit(width, es))
   val decOut = Wire(new UnpackedPosit(width, es))
-  val roundOut = Wire(new UnpackedPosit(width, es))
+  //val roundOut = Wire(new UnpackedPosit(width, es))
 
   val decodeA = Module(new PositDecode(width, es))
   decodeA.io.in := io.a
@@ -35,15 +35,15 @@ class PositMultiplyPackedToPacked(width: Int = 8, es: Int = 1, trailing_bits: In
   decOut := multiply.io.out
   io.trailingBits := multiply.io.trailingBits
   io.stickyBit := multiply.io.stickyBit
-
+  /*
   val round = Module(new PositRoundToNearestEven(width, es))
   round.io.in := decOut
   round.io.trailingBits := io.trailingBits
   round.io.stickyBit := io.stickyBit
   roundOut := round.io.out
-
+  */
   val encode = Module(new PositEncode(width, es))
-  encode.io.in := roundOut
+  encode.io.in := decOut
   io.out := encode.io.out
 
 
