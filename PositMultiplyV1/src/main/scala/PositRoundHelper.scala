@@ -40,7 +40,7 @@ class PositRoundHelper(width: Int = 8, es: Int = 1, trailing_bits: Int = 2) exte
                               LOCAL_FRACTION_BITS
 
   val unsignedRegime = Wire(UInt(LOCAL_UNSIGNED_REGIME_BITS.W))
-  val signedRegime = Wire(UInt(LOCAL_SIGNED_REGIME_BITS.W))
+  val signedRegime = Wire(SInt(LOCAL_SIGNED_REGIME_BITS.W))
   val preShift = Wire(UInt((SHIFT_ROUND_SIZE + trailing_bits).W))
   val postShiftSticky = Wire(UInt(1.W))
 
