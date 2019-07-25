@@ -84,11 +84,11 @@ class PositDecode(width: Int = 8, es: Int = 1) extends Module{
   } .otherwise {
     when ((regimePosOrZero === 1.U).asBool()) {
       unsignedRegime := cl0extended
-      printf("unsignedRegime is %b (statement by unReg assignment)", unsignedRegime)
+      //printf("unsignedRegime is %b (statement by unReg assignment)", unsignedRegime)
     } .otherwise {
       //is ~ actually wrong, or just intelliJ?????????????????????????
       unsignedRegime := LOCAL_MAX_SIGNED_REGIME.U/*(LOCAL_UNSIGNED_REGIME_BITS.W)*/ + ~cl0/*extended*/
-      printf("unsignedRegime is %b (statement by unReg assignment)", unsignedRegime)
+      //printf("unsignedRegime is %b (statement by unReg assignment)", unsignedRegime)
     }
     
   }
@@ -136,12 +136,14 @@ class PositDecode(width: Int = 8, es: Int = 1) extends Module{
 
     io.out.fraction := esAndFractionBits(LOCAL_MAX_REGIME_FIELD_SIZE-3-es, 0)
     io.out.exponent := Cat(unsignedRegime, esBits)
-    printf("unsignedRegime is %b (statement by exp assignment)", unsignedRegime)
+    //printf("unsignedRegime is %b (statement by exp assignment)", unsignedRegime)
 
   } else {
     // There is no ES to extract
     io.out.fraction := esAndFractionBits(LOCAL_MAX_REGIME_FIELD_SIZE-3, 0)
     io.out.exponent := unsignedRegime//(LOCAL_UNSIGNED_EXPONENT_BITS.W) //trying to change width
   }
+  
+  printf("unsignedRegime is %b", unsignedRegime)
 
 }
