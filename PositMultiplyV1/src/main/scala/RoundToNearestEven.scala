@@ -1,6 +1,6 @@
 // See README.md for license details.
-package PositMultiply
-
+//package PositMultiply
+package example
 import chisel3._
 import chisel3.util._
 import chisel3.core.Bundle
