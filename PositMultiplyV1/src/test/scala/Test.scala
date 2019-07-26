@@ -45,7 +45,7 @@ class Test extends Module {
   decodeTestA.io.in := aPacked
   val aUnpacked = Wire(new UnpackedPosit(width = width, es = es))
   aUnpacked := decodeTestA.io.out
-  
+  /*
   val encodeTestB = Module(new PositEncode(width = width, es = es))
   encodeTestB.io.in := gen.io.b
   val bPacked = Wire(new PackedPosit(width = width, es = es))
@@ -63,7 +63,7 @@ class Test extends Module {
   decodeTestC.io.in := cPacked
   val cUnpacked = Wire(new UnpackedPosit(width = width, es = es))
   cUnpacked := decodeTestC.io.out
-  
+  */
   val trailingBits = Wire(UInt(2.W))
   val stickyBit = Wire(UInt(1.W))
   
@@ -74,7 +74,7 @@ class Test extends Module {
 
   output <> multiply.io.out
   
-  
+  /*
   val countingZeros = Module(new CountLeadingZeros(WIDTH = width - 2, ADD_OFFSET = 0))
   val countTest = Wire(UInt((width-2).W))
   countTest := 15.U((width-2).W)
@@ -155,7 +155,7 @@ class Test extends Module {
     printf("\n")
 
   }//}// }
-
+*/
 }
 
 object Elaborate extends App {
