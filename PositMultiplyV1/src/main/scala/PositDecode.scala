@@ -150,5 +150,6 @@ class PositDecode(width: Int = 8, es: Int = 1) extends Module{
   printf("remainderBits is %b \n", remainderBits)
   printf("cl0 is %b \n", cl0)
   printf("~cl0 is %b \n", ~cl0)
+  printf("LOCAL_MAX_SIGNED_REGIME is %b", LOCAL_MAX_SIGNED_REGIME.U)
 
 }
